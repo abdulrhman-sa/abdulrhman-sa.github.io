@@ -1,0 +1,10 @@
+{
+  "name": "Abdulrhman Saeed AL-Asmri — Portfolio",
+  "short_name": "AbdulrhmanSA",
+  "description": "Personal portfolio of Abdulrhman Saeed AL-Asmri",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#12121b",
+  "theme_color": "#12121b",
+  "icons": [{"src":"/assets/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
