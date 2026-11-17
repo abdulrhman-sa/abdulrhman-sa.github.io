@@ -1,133 +1,2071 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#12121b">
-  <meta name="description" content="الموقع الشخصي لـ Abdulrhman Saeed AL-Asmri.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="author" content="Abdulrhman Saeed AL-Asmri">
-  <meta name="color-scheme" content="dark light">
-  <link rel="canonical" href="https://abdulrhman-sa.github.io/">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://abdulrhman-sa.github.io/">
-  <meta property="og:site_name" content="Abdulrhman Saeed AL-Asmri">
-  <meta property="og:title" content="Abdulrhman Saeed AL-Asmri | Portfolio">
-  <meta property="og:description" content="A personal space for work, ideas and what comes next.">
-  <meta property="og:image" content="https://abdulrhman-sa.github.io/assets/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Abdulrhman Saeed AL-Asmri | Portfolio">
-  <meta name="twitter:image" content="https://abdulrhman-sa.github.io/assets/og-image.png">
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#f5f5f2">
+  <meta name="description" content="Abdulrhman Saeed AL-Asmri — AI & Machine Learning Engineer. Interactive portfolio featuring SAER and AI-Enhanced Intrusion Detection System.">
+  <title>Abdulrhman Saeed AL-Asmri — AI / ML Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <script>
-    (() => {
-      try {
-        const lang = localStorage.getItem('asa-lang');
-        if (lang === 'en') { document.documentElement.lang = 'en'; document.documentElement.dir = 'ltr'; }
-        const mode = localStorage.getItem('asa-theme');
-        if (mode === 'light') document.documentElement.dataset.theme = 'light';
-      } catch (_) { /* Local storage is optional. */ }
-    })();
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('asa-v2-theme') || 'light';
+      var l = localStorage.getItem('asa-v2-lang') || 'en';
+      document.documentElement.lang = l;
+      document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+    } catch (e) {}
   </script>
-  <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Person","name":"Abdulrhman Saeed AL-Asmri","url":"https://abdulrhman-sa.github.io/","sameAs":["https://github.com/abdulrhman-sa"]}
-  </script>
-  <title>Abdulrhman Saeed AL-Asmri — Portfolio</title>
-  <script type="module" src="/js/main.js"></script>
+  <style>
+    :root {
+      --paper: #f5f5f2;
+      --paper-alt: #eaece7;
+      --panel: #ffffff;
+      --panel-soft: #f0f1ed;
+      --ink: #111318;
+      --soft: #353b45;
+      --muted: #4b525d;
+      --rule: #cfd3cc;
+      --accent: #e64827;
+      --accent-hover: #cc3a1b;
+      --accent-soft: rgba(230, 72, 39, 0.12);
+      --accent-ink: #ffffff;
+      --linkedin: #0A66C2;
+      --linkedin-glow: rgba(10, 102, 194, 0.45);
+      --navbg: rgba(245, 245, 242, 0.92);
+      --band-bg: #111318;
+      --band-ink: #f5f5f2;
+      --band-soft: #d3dae2;
+      --band-border: rgba(255, 255, 255, 0.22);
+      --frame-saer: #dfe6f0;
+      --frame-ids: #d8e0e6;
+      --frame-ink: #14202e;
+      --contact-bg: #e64827;
+      --contact-ink: #111318;
+      --contact-soft: #26140f;
+      --contact-rule: rgba(17, 19, 24, 0.35);
+      --grid-dot: rgba(17, 19, 24, 0.12);
+      --font: 'DM Sans', system-ui, -apple-system, sans-serif;
+      --display: 'Space Grotesk', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --arabic: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      --shell: min(calc(100% - 80px), 1380px);
+      color-scheme: light;
+    }
+
+    :root[data-theme="dark"] {
+      --paper: #0d1117;
+      --paper-alt: #141a22;
+      --panel: #1b232e;
+      --panel-soft: #161d26;
+      --ink: #f4f6f8;
+      --soft: #d0d7de;
+      --muted: #9da7b3;
+      --rule: #2d3744;
+      --accent: #ff6b4a;
+      --accent-hover: #ff8266;
+      --accent-soft: rgba(255, 107, 74, 0.15);
+      --accent-ink: #0d1117;
+      --linkedin: #1d80e2;
+      --linkedin-glow: rgba(29, 128, 226, 0.55);
+      --navbg: rgba(13, 17, 23, 0.92);
+      --band-bg: #151c26;
+      --band-ink: #f4f6f8;
+      --band-soft: #d0d7de;
+      --band-border: rgba(255, 255, 255, 0.16);
+      --frame-saer: #182230;
+      --frame-ids: #141c25;
+      --frame-ink: #f0f4f8;
+      --contact-bg: #ff6b4a;
+      --contact-ink: #0d1117;
+      --contact-soft: #1f0e0a;
+      --contact-rule: rgba(13, 17, 23, 0.35);
+      --grid-dot: rgba(244, 246, 248, 0.10);
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      transition: color 0.25s ease, background-color 0.25s ease;
+    }
+    html:lang(ar) body { font-family: var(--arabic); }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    ::selection { background: var(--accent); color: var(--accent-ink); }
+
+    .shell { width: var(--shell); margin-inline: auto; }
+    .skip {
+      position: fixed; top: 0; inset-inline-start: 10px;
+      background: var(--accent); color: var(--accent-ink);
+      z-index: 300; padding: 10px 18px; font-weight: 700;
+      transform: translateY(-130%); transition: transform 0.2s;
+    }
+    .skip:focus { transform: translateY(0); }
+    .scroll-progress {
+      height: 3px; background: var(--accent); width: 0;
+      position: fixed; top: 0; inset-inline-start: 0; z-index: 150;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; height: 82px; z-index: 120;
+      background: var(--navbg); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .header-inner {
+      height: 100%; display: flex; align-items: center;
+      justify-content: space-between; gap: 20px;
+    }
+    .wordmark { display: flex; align-items: center; gap: 12px; flex: none; }
+    .mark {
+      font: 700 48px/1 var(--display); letter-spacing: -0.14em;
+      display: block; transform: translateY(-2px); color: var(--ink);
+    }
+    .mark-dot { color: var(--accent); }
+    .wordmark-label {
+      font: 700 11px/1.25 var(--display); letter-spacing: -0.02em; color: var(--ink);
+    }
+    .wordmark-label span {
+      display: block; font-size: 10px; font-weight: 500;
+      letter-spacing: 0.04em; color: var(--muted);
+    }
+    .desktop-nav {
+      display: flex; align-items: center; gap: 28px;
+      margin-inline: auto; font: 600 13px var(--font); color: var(--ink);
+    }
+    html:lang(ar) .desktop-nav { font-family: var(--arabic); font-size: 14px; }
+    .desktop-nav a { position: relative; padding: 10px 0; transition: color 0.2s; }
+    .desktop-nav a:hover { color: var(--accent); }
+    .desktop-nav a::after {
+      content: ''; position: absolute; bottom: 4px; inset-inline-start: 0;
+      width: 100%; height: 2px; transform: scaleX(0); transform-origin: start;
+      background: var(--accent); transition: transform 0.22s ease;
+    }
+    .desktop-nav a:hover::after { transform: scaleX(1); }
+
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .cmd-trigger {
+      height: 38px; padding: 0 12px; border: 1px solid var(--rule);
+      background: var(--panel); color: var(--soft); border-radius: 6px;
+      font: 600 11px var(--mono); display: inline-flex; align-items: center; gap: 8px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .cmd-trigger:hover { border-color: var(--accent); color: var(--ink); }
+    .cmd-trigger kbd {
+      background: var(--paper-alt); color: var(--ink);
+      padding: 2px 6px; border-radius: 4px; font-size: 10px; border: 1px solid var(--rule);
+    }
+    .text-button, .icon-button {
+      height: 40px; min-width: 40px; background: transparent;
+      border: 1px solid transparent; border-radius: 6px; color: var(--ink);
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .text-button { font-weight: 700; font-size: 13px; padding: 0 10px; border-color: var(--rule); }
+    .text-button:hover, .icon-button:hover { color: var(--accent); border-color: var(--accent); }
+    .icon-button { display: grid; place-items: center; }
+    .menu-toggle, .mobile-menu { display: none; }
+
+    /* Hero + Dot Matrix */
+    .hero-wrap { position: relative; overflow: hidden; }
+    .hero-grid-bg {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background-image: radial-gradient(var(--grid-dot) 1.25px, transparent 1.25px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 30%, transparent 100%);
+    }
+
+    .eyebrow, .section-index, .micro-label, .eyebrow-index, .project-topline,
+    .project-category, .hero-footer, .hero-subline,
+    .timeline-year, .contact-top, .footer-meta {
+      font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+    }
+    html:lang(ar) .eyebrow, html:lang(ar) .section-index, html:lang(ar) .micro-label,
+    html:lang(ar) .project-topline, html:lang(ar) .project-category,
+    html:lang(ar) .hero-footer, html:lang(ar) .hero-subline, html:lang(ar) .contact-top {
+      font-family: var(--arabic); letter-spacing: 0; font-size: 12px;
+    }
+
+    .hero {
+      position: relative; z-index: 1;
+      min-height: min(900px, calc(100svh - 82px));
+      display: flex; flex-direction: column; padding-top: 24px;
+    }
+    .eyebrow {
+      display: flex; align-items: center; gap: 12px; color: var(--soft);
+      padding: 4px 0 15px; border-bottom: 1px solid var(--rule);
+    }
+    .spark { height: 8px; width: 8px; background: var(--accent); transform: rotate(45deg); flex: none; }
+    .eyebrow-index { margin-inline-start: auto; color: var(--muted); }
+
+    .hero-grid {
+      display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      align-items: center; gap: clamp(28px, 4.5vw, 72px); flex: 1; padding: 40px 0 36px;
+    }
+    html:lang(ar) .hero-grid { direction: rtl; }
+
+    /* Interactive Rotating AI Emblem Next to Name */
+    .hero-name-header {
+      display: flex; align-items: center; gap: 18px; margin-bottom: 14px;
+      direction: ltr;
+    }
+    .ai-emblem-btn {
+      position: relative; width: 78px; height: 78px; flex: none;
+      padding: 0; border: 0; background: transparent; border-radius: 50%;
+      display: grid; place-items: center; cursor: pointer;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .ai-emblem-btn:hover { transform: scale(1.1); }
+    .ai-emblem-btn.burst { transform: scale(1.16) rotate(360deg); }
+    .ai-orbit-ring {
+      position: absolute; inset: -4px; border-radius: 50%;
+      background: conic-gradient(from 0deg, #00e5ff, var(--accent), #0A66C2, #00e5ff);
+      animation: spinSlow 6s linear infinite;
+      padding: 2.5px;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+    .ai-emblem-btn:hover .ai-orbit-ring { animation-duration: 1.6s; }
+    .ai-emblem-core {
+      width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
+      border: 2px solid var(--panel); background: #07111e;
+      box-shadow: 0 0 22px rgba(0, 212, 255, 0.35);
+      animation: floatGentle 4s ease-in-out infinite;
+    }
+    .ai-emblem-core img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      transition: transform 0.6s ease;
+    }
+    .ai-emblem-btn:hover .ai-emblem-core img { transform: scale(1.12) rotate(6deg); }
+    @keyframes spinSlow { to { transform: rotate(360deg); } }
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    .hello {
+      color: var(--accent); font: 700 12px var(--mono);
+      letter-spacing: 0.12em; margin: 0 0 4px;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    html:lang(ar) .hello { font-family: var(--arabic); letter-spacing: 0; font-size: 14px; }
+    .ai-badge-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      font: 700 10px var(--mono); color: var(--soft);
+      background: var(--panel); border: 1px solid var(--rule);
+      padding: 3px 9px; border-radius: 999px;
+    }
+    .hero-copy h1 {
+      font: 700 clamp(50px, 6.8vw, 114px)/0.98 var(--display);
+      letter-spacing: -0.075em; margin: 0; direction: ltr; text-align: left; color: var(--ink);
+    }
+    .hero-copy h1 span { display: block; white-space: nowrap; }
+    .hero-outline { color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+    .hero-outline em { font-style: normal; color: var(--accent); -webkit-text-stroke: 0; }
+
+    .hero-deck {
+      font: 600 clamp(20px, 2.1vw, 30px)/1.38 var(--display);
+      letter-spacing: -0.03em; max-width: 560px; margin: 24px 0 10px; color: var(--ink);
+    }
+    html:lang(ar) .hero-deck { font-family: var(--arabic); letter-spacing: 0; line-height: 1.5; }
+    .hero-desc { color: var(--soft); font-size: 16px; line-height: 1.75; max-width: 520px; margin: 0; }
+    html:lang(ar) .hero-desc { line-height: 1.9; }
+
+    /* Hero CTAs + Pulsing LinkedIn & GitHub Buttons */
+    .hero-ctas { display: flex; gap: 11px; flex-wrap: wrap; margin-top: 26px; align-items: center; }
+    .btn {
+      min-height: 48px; display: inline-flex; align-items: center; justify-content: center;
+      gap: 12px; padding: 11px 18px; font-size: 13px; font-weight: 700;
+      border: 1.5px solid var(--ink); border-radius: 6px;
+      transition: transform 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-dark { background: var(--ink); color: var(--paper); }
+    .btn-dark:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+    .btn-linkedin {
+      background: var(--linkedin); color: #ffffff; border-color: var(--linkedin);
+      box-shadow: 0 0 0 0 var(--linkedin-glow);
+      animation: pulseLinkedin 2.3s infinite;
+    }
+    .btn-linkedin:hover { background: #004182; border-color: #004182; color: #ffffff; }
+    @keyframes pulseLinkedin {
+      0% { box-shadow: 0 0 0 0 var(--linkedin-glow); }
+      70% { box-shadow: 0 0 0 11px rgba(10, 102, 194, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(10, 102, 194, 0); }
+    }
+
+    .btn-github-glow {
+      background: var(--accent); color: var(--accent-ink); border-color: var(--accent);
+      box-shadow: 0 0 0 0 rgba(230, 72, 39, 0.45);
+      animation: pulseAccent 2.3s infinite 0.55s;
+    }
+    .btn-github-glow:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    @keyframes pulseAccent {
+      0% { box-shadow: 0 0 0 0 rgba(230, 72, 39, 0.45); }
+      70% { box-shadow: 0 0 0 11px rgba(230, 72, 39, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 72, 39, 0); }
+    }
+    .btn-icon { width: 17px; height: 17px; flex: none; }
+
+    .hero-subline {
+      margin-top: 24px; display: flex; align-items: center; gap: 10px;
+      color: var(--soft); font-weight: 500;
+    }
+    .live-dot {
+      width: 8px; height: 8px; background: #16a34a; border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(22, 163, 74, 0.16); flex: none;
+      animation: pulseGreen 2.2s infinite;
+    }
+    @keyframes pulseGreen {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.18); }
+      50% { box-shadow: 0 0 0 8px rgba(22, 163, 74, 0.05); }
+    }
+
+    /* Hero Visual Cards */
+    .hero-visual {
+      height: clamp(430px, 41vw, 570px); position: relative; isolation: isolate;
+      perspective: 1100px;
+    }
+    .hero-visual-bg {
+      position: absolute; inset: 5% 2% 7% 6%; background: var(--accent);
+      overflow: hidden; display: flex; align-items: flex-start; justify-content: center;
+      font: 700 clamp(170px, 20vw, 310px)/1 var(--display); letter-spacing: -0.14em;
+      color: rgba(255, 255, 255, 0.20); padding-top: 18px; transform: rotate(-2.5deg);
+      border-radius: 6px;
+    }
+    .hero-visual-bg span { font-size: 0.24em; align-self: start; margin-top: 16px; color: #fff; }
+    .preview-card {
+      position: absolute; background: var(--panel); border: 1px solid var(--rule);
+      box-shadow: 0 26px 70px rgba(10, 14, 20, 0.28); overflow: hidden;
+      border-radius: 10px; transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: pointer;
+    }
+    .card-top { width: 82%; height: 54%; top: 9%; inset-inline-start: 2%; transform: rotate(-6deg); z-index: 3; }
+    .card-bottom { width: 78%; height: 48%; bottom: 7%; inset-inline-end: 0; transform: rotate(5deg); z-index: 4; }
+    .card-top:hover { transform: rotate(-1.5deg) translateY(-8px) scale(1.02); z-index: 6; }
+    .card-bottom:hover { transform: rotate(1deg) translateY(-8px) scale(1.02); z-index: 6; }
+    .preview-bar {
+      height: 30px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 12px; color: var(--soft); background: var(--panel);
+      border-bottom: 1px solid var(--rule); font: 700 10px var(--mono); direction: ltr;
+    }
+    .preview-dots { color: var(--accent); letter-spacing: 4px; font-size: 9px; }
+    .preview-image { height: calc(100% - 30px); overflow: hidden; background: #0b111b; }
+    .preview-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .hero-stamp {
+      position: absolute; bottom: 2%; inset-inline-start: 3%; color: var(--ink);
+      font: 700 10px/1.45 var(--mono); letter-spacing: 0.1em;
+      transform: rotate(-90deg); transform-origin: left top; z-index: 5;
+    }
+
+    .hero-footer {
+      border-top: 1px solid var(--rule); padding: 18px 0 22px;
+      display: flex; justify-content: space-between; gap: 16px; color: var(--soft);
+    }
+    .hero-footer a { display: flex; gap: 16px; align-items: center; font-weight: 700; }
+    .hero-footer a:hover { color: var(--accent); }
+
+    /* Evidence Band */
+    .proof {
+      background: var(--band-bg); color: var(--band-ink);
+      padding: 52px 0 56px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    }
+    .proof-grid {
+      display: grid; grid-template-columns: 1fr 1.15fr 1.15fr;
+      gap: clamp(28px, 5vw, 72px); align-items: center;
+    }
+    .proof-intro .micro-label { color: var(--accent); }
+    .proof-intro p {
+      font: 600 clamp(19px, 2vw, 28px)/1.4 var(--display);
+      letter-spacing: -0.03em; max-width: 280px; margin: 12px 0 0; color: var(--band-ink);
+    }
+    html:lang(ar) .proof-intro p { font-family: var(--arabic); letter-spacing: 0; line-height: 1.55; }
+    .proof-stat { padding-inline-start: 28px; border-inline-start: 1px solid var(--band-border); }
+    .proof-stat strong {
+      font: 700 clamp(54px, 7vw, 104px)/1 var(--display);
+      letter-spacing: -0.07em; display: block; color: var(--band-ink);
+    }
+    .proof-stat strong span { font-size: 0.45em; margin-inline-start: 2px; color: var(--accent); }
+    .proof-stat > span {
+      display: block; line-height: 1.75; max-width: 370px;
+      font-size: 13px; color: var(--band-soft); margin-top: 12px;
+    }
+
+    /* Sections */
+    .section { padding-top: clamp(78px, 8vw, 124px); padding-bottom: clamp(78px, 8vw, 124px); }
+    .section-head {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      gap: 28px; margin-bottom: 54px;
+    }
+    .section-index { color: var(--muted); display: flex; align-items: center; gap: 10px; }
+    .section-marker { display: inline-block; width: 18px; height: 2px; background: var(--accent); flex: none; }
+    .huge-title {
+      font: 700 clamp(52px, 6.8vw, 104px)/0.95 var(--display);
+      letter-spacing: -0.07em; margin: 20px 0 0; color: var(--ink);
+    }
+    html:lang(ar) .huge-title { font-family: var(--arabic); letter-spacing: -0.02em; line-height: 1.35; }
+    .accent { color: var(--accent); }
+    .section-intro { color: var(--soft); max-width: 380px; line-height: 1.8; font-size: 15px; margin: 0; }
+
+    /* Projects */
+    .project { border-top: 1px solid var(--rule); margin-top: 52px; }
+    .project + .project { margin-top: 92px; }
+    .project-topline {
+      display: flex; justify-content: space-between; gap: 16px;
+      padding: 18px 0 28px; color: var(--soft);
+    }
+    .project-num { color: var(--accent); font-weight: 700; }
+    .project-layout {
+      display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      gap: clamp(32px, 5vw, 76px); align-items: start;
+    }
+    .project-gallery { min-width: 0; }
+    html:lang(ar) .project-gallery { direction: ltr; }
+    html:lang(ar) .project-info { text-align: right; }
+
+    .project-art-frame {
+      background: var(--frame-saer); position: relative; min-height: 460px;
+      padding: 28px; display: flex; flex-direction: column; overflow: hidden;
+      border: 1px solid var(--rule); border-radius: 6px;
+    }
+    .project-ids .project-art-frame { background: var(--frame-ids); }
+    .project-art-frame::before {
+      position: absolute; content: ''; width: 460px; height: 460px;
+      border: 1px solid rgba(120, 140, 170, 0.22); border-radius: 50%;
+      top: -250px; right: -150px; pointer-events: none;
+      box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.05), 0 0 0 120px rgba(255, 255, 255, 0.04);
+    }
+    .project-art-title {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 10px; color: var(--frame-ink); z-index: 1;
+    }
+    .project-art-title span { font: 700 clamp(38px, 4.4vw, 66px)/1 var(--display); letter-spacing: -0.08em; }
+    .project-art-title i { font-style: normal; font-size: 11px; vertical-align: top; }
+    .project-art-title small { font: 700 11px var(--mono); letter-spacing: 0.08em; margin-top: 6px; opacity: 0.85; }
+
+    .project-image {
+      height: 315px; width: 100%; margin-top: 22px; position: relative;
+      box-shadow: 0 22px 46px rgba(10, 16, 26, 0.28);
+      border: 4px solid var(--panel); border-radius: 8px; overflow: hidden;
+      background: #0a101b; cursor: zoom-in;
+      transition: transform 0.35s ease;
+    }
+    .project-art-frame:hover .project-image { transform: scale(1.015); }
+    .project-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .zoom-pill {
+      position: absolute; bottom: 10px; right: 10px; z-index: 3;
+      background: rgba(13, 17, 23, 0.82); color: #f4f6f8;
+      border: 1px solid rgba(255, 255, 255, 0.24); border-radius: 999px;
+      padding: 5px 11px; font: 600 11px var(--mono); backdrop-filter: blur(8px);
+      pointer-events: none;
+    }
+
+    /* Pipeline Box */
+    .pipeline-box {
+      margin-top: 16px; border: 1px solid var(--rule); background: var(--panel);
+      border-radius: 8px; padding: 16px; direction: ltr;
+    }
+    html:lang(ar) .pipeline-box { direction: rtl; }
+    .pipeline-head {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 12px; gap: 10px; flex-wrap: wrap;
+    }
+    .pipeline-head span { font: 700 11px var(--mono); color: var(--accent); letter-spacing: 0.06em; }
+    html:lang(ar) .pipeline-head span { font-family: var(--arabic); letter-spacing: 0; font-size: 12px; }
+    .pipe-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+    .pipe-tab {
+      border: 1px solid var(--rule); background: var(--panel-soft); color: var(--soft);
+      padding: 5px 10px; border-radius: 5px; font: 600 11px var(--mono);
+      transition: all 0.2s;
+    }
+    html:lang(ar) .pipe-tab { font-family: var(--arabic); }
+    .pipe-tab.active, .pipe-tab:hover {
+      background: var(--accent); color: var(--accent-ink); border-color: var(--accent);
+    }
+    .pipe-detail { font-size: 13px; line-height: 1.7; color: var(--soft); margin: 0; }
+    .pipe-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
+    .pipe-node {
+      padding: 6px 10px; border: 1px solid var(--rule); background: var(--paper-alt);
+      color: var(--ink); border-radius: 5px; font: 600 11px var(--mono);
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .pipe-arrow { color: var(--accent); font-weight: 700; }
+
+    /* IDS Telemetry & Screenshots */
+    .ids-telemetry-panel {
+      margin-top: 16px; border: 1px solid var(--rule); background: var(--panel);
+      border-radius: 8px; padding: 16px;
+    }
+    html:lang(ar) .ids-telemetry-panel { direction: rtl; text-align: right; }
+    .telemetry-header {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 10px; margin-bottom: 12px;
+    }
+    .telemetry-title { font: 700 11px var(--mono); color: var(--accent); letter-spacing: 0.06em; }
+    html:lang(ar) .telemetry-title { font-family: var(--arabic); letter-spacing: 0; font-size: 12px; }
+    .telemetry-badge {
+      padding: 4px 10px; border-radius: 999px; font: 700 11px var(--mono);
+      text-transform: uppercase;
+    }
+    .sev-normal { background: rgba(22, 163, 74, 0.16); color: #15803d; border: 1px solid rgba(22, 163, 74, 0.35); }
+    .sev-low { background: rgba(37, 99, 235, 0.14); color: #1d4ed8; border: 1px solid rgba(37, 99, 235, 0.35); }
+    .sev-medium { background: rgba(202, 138, 4, 0.16); color: #a16207; border: 1px solid rgba(202, 138, 4, 0.4); }
+    .sev-high { background: rgba(234, 88, 12, 0.16); color: #c2410c; border: 1px solid rgba(234, 88, 12, 0.4); }
+    .sev-critical { background: rgba(220, 38, 38, 0.16); color: #b91c1c; border: 1px solid rgba(220, 38, 38, 0.4); }
+    :root[data-theme="dark"] .sev-normal { color: #4ade80; }
+    :root[data-theme="dark"] .sev-low { color: #60a5fa; }
+    :root[data-theme="dark"] .sev-medium { color: #facc15; }
+    :root[data-theme="dark"] .sev-high { color: #fb923c; }
+    :root[data-theme="dark"] .sev-critical { color: #f87171; }
+
+    .telemetry-metrics {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;
+      margin-bottom: 12px;
+    }
+    .t-box {
+      background: var(--panel-soft); border: 1px solid var(--rule);
+      border-radius: 6px; padding: 8px 10px;
+    }
+    .t-box small { display: block; font: 600 10px var(--mono); color: var(--muted); }
+    html:lang(ar) .t-box small { font-family: var(--arabic); }
+    .t-box strong { display: block; font: 700 16px var(--display); color: var(--ink); margin-top: 2px; }
+
+    .risk-bar-track {
+      height: 6px; background: var(--paper-alt); border-radius: 999px;
+      overflow: hidden; margin-bottom: 14px; border: 1px solid var(--rule);
+    }
+    .risk-bar-fill { height: 100%; transition: width 0.35s ease, background-color 0.35s ease; }
+
+    .ids-strip-label {
+      font: 700 11px var(--mono); color: var(--soft); margin-bottom: 10px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    html:lang(ar) .ids-strip-label { font-family: var(--arabic); font-size: 12px; }
+    .ids-thumb-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .ids-thumb {
+      border: 1.5px solid var(--rule); background: var(--panel-soft); border-radius: 6px;
+      overflow: hidden; padding: 0; text-align: start; transition: border-color 0.2s, transform 0.2s;
+    }
+    .ids-thumb:hover { transform: translateY(-2px); border-color: var(--ink); }
+    .ids-thumb.active { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+    .ids-thumb img { width: 100%; height: 56px; object-fit: cover; object-position: top; background: #0a101b; }
+    .ids-thumb-meta {
+      padding: 5px 7px; display: flex; justify-content: space-between; align-items: center; gap: 4px;
+    }
+    .ids-thumb-meta span { font: 700 10px var(--mono); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ids-thumb-meta em { font: 700 10px var(--mono); font-style: normal; color: var(--accent); }
+
+    /* Project Info & Real Tool Logos */
+    .project-info { padding-top: 4px; }
+    .project-category { color: var(--accent); line-height: 1.6; }
+    .project-info h3 {
+      font: 700 clamp(44px, 5vw, 76px)/1 var(--display);
+      letter-spacing: -0.07em; margin: 14px 0 18px; color: var(--ink);
+    }
+    .project-info h3 small {
+      display: block; margin-top: 8px; font: 700 clamp(22px, 2.5vw, 36px)/1.2 var(--arabic);
+      letter-spacing: 0; color: var(--soft);
+    }
+    .project-ids h3 small { font: 700 19px/1.3 var(--display); letter-spacing: 0.05em; }
+    .project-summary { color: var(--soft); font-size: 16px; line-height: 1.8; margin: 0 0 22px; }
+
+    .metric {
+      border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+      padding: 18px 0 20px; display: grid; grid-template-columns: auto 1fr;
+      gap: 20px; align-items: center;
+    }
+    .metric > strong { font: 700 clamp(44px, 4.8vw, 72px)/1 var(--display); letter-spacing: -0.07em; color: var(--ink); }
+    .metric > strong span { font-size: 0.55em; color: var(--accent); }
+    .metric div span { display: block; font-weight: 700; font-size: 14px; color: var(--ink); }
+    .metric small { color: var(--soft); font-size: 13px; line-height: 1.65; display: block; margin-top: 5px; }
+
+    .contribution { padding: 20px 0 8px; }
+    .contribution-label { color: var(--accent); font: 700 11px var(--mono); letter-spacing: 0.09em; }
+    html:lang(ar) .contribution-label { font-family: var(--arabic); letter-spacing: 0; font-size: 12px; }
+    .contribution p { font-size: 14px; line-height: 1.85; margin: 8px 0 4px; color: var(--soft); }
+
+    .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 22px; }
+    .tool-chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      font: 600 12px var(--mono); padding: 7px 12px; border: 1px solid var(--rule);
+      background: var(--panel); color: var(--ink); border-radius: 6px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .tool-chip:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .tool-chip img, .tool-logo {
+      width: 17px; height: 17px; object-fit: contain; flex: none;
+    }
+    .tool-chip sup { font-size: 9px; color: var(--accent); margin-inline-start: 2px; }
+
+    .project-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; }
+    .detail-btn {
+      background: var(--ink); color: var(--paper); border: 1px solid var(--ink);
+      min-height: 48px; padding: 11px 18px; display: inline-flex; justify-content: space-between;
+      align-items: center; gap: 18px; font-weight: 700; font-size: 13px; border-radius: 6px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .detail-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); transform: translateY(-2px); }
+    .project-github {
+      font-size: 13px; font-weight: 700; border-bottom: 1.5px solid var(--ink);
+      padding: 6px 0; color: var(--ink); display: inline-flex; align-items: center; gap: 6px;
+    }
+    .project-github:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* REDESIGNED FULL-WIDTH "WHAT I USE" STACK MATRIX */
+    .stack-section {
+      background: var(--paper-alt);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .stack-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      flex-wrap: wrap; gap: 24px; margin-bottom: 36px;
+    }
+    .stack-filters {
+      display: flex; gap: 8px; flex-wrap: wrap;
+    }
+    .stack-filter-btn {
+      border: 1px solid var(--rule); background: var(--panel); color: var(--soft);
+      padding: 10px 16px; border-radius: 999px; font: 700 12px var(--mono);
+      transition: all 0.2s;
+    }
+    html:lang(ar) .stack-filter-btn { font-family: var(--arabic); font-size: 13px; }
+    .stack-filter-btn.active, .stack-filter-btn:hover {
+      background: var(--accent); color: var(--accent-ink); border-color: var(--accent);
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+      gap: 14px;
+    }
+    .stack-card {
+      background: var(--panel); border: 1px solid var(--rule); border-radius: 10px;
+      padding: 16px; display: flex; align-items: center; gap: 14px;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .stack-card:hover {
+      transform: translateY(-3px); border-color: var(--accent);
+      box-shadow: 0 12px 28px rgba(10, 14, 20, 0.08);
+    }
+    .stack-card.hidden { display: none; }
+    .stack-icon-wrap {
+      width: 44px; height: 44px; border-radius: 9px; flex: none;
+      background: var(--panel-soft); border: 1px solid var(--rule);
+      display: grid; place-items: center; padding: 8px;
+    }
+    .stack-icon-wrap img { width: 26px; height: 26px; object-fit: contain; }
+    .stack-icon-fallback {
+      font: 700 13px var(--mono); color: var(--accent);
+    }
+    .stack-card-info { min-width: 0; }
+    .stack-card-info strong {
+      display: block; font-size: 14px; font-weight: 700; color: var(--ink);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .stack-card-info small {
+      display: block; font: 600 11px var(--mono); color: var(--muted); margin-top: 3px;
+    }
+    html:lang(ar) .stack-card-info small { font-family: var(--arabic); }
+    .stack-note {
+      margin-top: 26px; font-size: 13px; color: var(--muted); line-height: 1.75;
+    }
+
+    /* Journey */
+    .timeline { border-top: 1px solid var(--rule); }
+    .timeline-item {
+      display: grid; grid-template-columns: minmax(90px, 16%) 1fr 40px;
+      gap: 20px; align-items: center; border-bottom: 1px solid var(--rule);
+      padding: 28px 4px; transition: padding 0.22s;
+    }
+    .timeline-item:hover { padding-inline-start: 16px; }
+    .timeline-year { font: 700 clamp(24px, 2.8vw, 38px)/1 var(--display); color: var(--accent); }
+    .timeline-item h3 { font: 700 clamp(18px, 1.9vw, 26px)/1.4 var(--display), var(--arabic); margin: 0 0 6px; color: var(--ink); }
+    .timeline-item p { color: var(--soft); font-size: 14px; line-height: 1.7; margin: 0; }
+    .timeline-arrow { font-size: 22px; text-align: end; color: var(--ink); }
+    .certs { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
+    .certs .micro-label { color: var(--accent); }
+    .certs p { font-size: 14px; line-height: 1.8; max-width: 520px; margin: 10px 0 0; color: var(--soft); }
+
+    /* Contact */
+    .contact { background: var(--contact-bg); color: var(--contact-ink); padding: clamp(70px, 8vw, 120px) 0 60px; }
+    .contact-top {
+      display: flex; justify-content: space-between; align-items: center; gap: 18px;
+      border-top: 1px solid var(--contact-rule); padding: 18px 0;
+    }
+    .contact-top .section-index { color: var(--contact-ink); }
+    .contact-top .section-marker { background: var(--contact-ink); }
+    .contact-top > span:last-child { color: var(--contact-soft); font-weight: 700; }
+    .contact-title {
+      font: 700 clamp(62px, 10.5vw, 155px)/0.98 var(--display);
+      letter-spacing: -0.07em; margin: 40px 0 52px; color: var(--contact-ink);
+    }
+    html:lang(ar) .contact-title { font-family: var(--arabic); letter-spacing: -0.02em; line-height: 1.25; }
+    .contact-title em { color: transparent; -webkit-text-stroke: 2px var(--contact-ink); font-style: normal; }
+    .contact-cta-row {
+      display: flex; align-items: stretch; justify-content: space-between; gap: 18px;
+      border-top: 1px solid var(--contact-rule); border-bottom: 1px solid var(--contact-rule);
+      padding: 12px 0;
+    }
+    .contact-email {
+      display: flex; justify-content: space-between; align-items: center; gap: 28px;
+      font: 700 clamp(17px, 2.3vw, 31px)/1.4 var(--display); min-width: 0; overflow-wrap: anywhere;
+      color: var(--contact-ink);
+    }
+    .contact-email:hover { opacity: 0.78; }
+    .copy-button {
+      border: 1.5px solid var(--contact-ink); min-width: 155px; background: transparent;
+      color: var(--contact-ink); display: flex; justify-content: space-between;
+      align-items: center; gap: 14px; padding: 12px 16px; font-size: 13px; font-weight: 700;
+      transition: background 0.2s, color 0.2s;
+    }
+    .copy-button:hover { background: var(--contact-ink); color: var(--contact-bg); }
+    .contact-social { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 38px; }
+    .contact-social .btn { border-width: 1.5px; }
+
+    /* Footer */
+    .footer { padding-top: 60px; padding-bottom: 28px; }
+    .footer-name {
+      font: 700 clamp(46px, 7.8vw, 128px)/1 var(--display); letter-spacing: -0.08em;
+      white-space: nowrap; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+      color: var(--ink);
+    }
+    .footer-name span { color: var(--accent); }
+    .footer-name i { font-size: 0.24em; font-style: normal; letter-spacing: 0; }
+    .footer-meta {
+      border-top: 1px solid var(--rule); padding-top: 22px; margin-top: 48px;
+      display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; color: var(--soft); font-size: 11px;
+    }
+    .footer-meta a:hover { color: var(--accent); }
+
+    /* Dialogs */
+    dialog {
+      padding: 0; border: 1px solid var(--rule); background: var(--paper); color: var(--ink);
+      max-width: 100%; box-shadow: 0 35px 120px rgba(0, 0, 0, 0.45);
+    }
+    dialog::backdrop { background: rgba(10, 14, 20, 0.82); backdrop-filter: blur(8px); }
+    #case-dialog { width: min(100%, 980px); max-height: 92dvh; overflow: auto; border-radius: 10px; }
+    .dialog-inner { padding: clamp(22px, 4.5vw, 58px); }
+    .dialog-nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      border-bottom: 1px solid var(--rule); padding-bottom: 18px;
+    }
+    .close-dialog {
+      border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+      min-height: 42px; padding: 8px 16px; display: inline-flex; align-items: center;
+      gap: 10px; font-size: 12px; font-weight: 700; border-radius: 6px;
+    }
+    .close-dialog:hover { border-color: var(--accent); color: var(--accent); }
+    .dialog-intro { padding: 36px 0 24px; }
+    .dialog-intro h2 { font: 700 clamp(38px, 6vw, 84px)/1 var(--display); letter-spacing: -0.06em; margin: 16px 0; color: var(--ink); }
+    html:lang(ar) .dialog-intro h2 { font-family: var(--arabic); letter-spacing: 0; line-height: 1.3; }
+    .dialog-intro p { max-width: 650px; color: var(--soft); line-height: 1.8; }
+    .dialog-hero-media {
+      height: clamp(230px, 38vw, 480px); background: #0a101b; border-radius: 8px;
+      border: 1px solid var(--rule); display: grid; place-items: center; overflow: hidden;
+    }
+    .dialog-hero-media img { width: 100%; height: 100%; object-fit: contain; }
+    .dialog-content {
+      display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; row-gap: 36px; margin: 40px 0;
+    }
+    .dialog-content h3 { font: 700 12px var(--mono); letter-spacing: 0.08em; color: var(--accent); margin: 0 0 14px; }
+    html:lang(ar) .dialog-content h3 { font-family: var(--arabic); letter-spacing: 0; font-size: 13px; }
+    .dialog-content p, .dialog-content li { font-size: 15px; line-height: 1.85; color: var(--soft); margin: 0; }
+    .dialog-content ol { padding-inline-start: 22px; margin: 0; }
+    .dialog-content li + li { margin-top: 8px; }
+    .dialog-sources { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; gap: 14px; flex-wrap: wrap; }
+    .dialog-sources a {
+      border: 1px solid var(--ink); padding: 12px 18px; font-size: 12px; font-weight: 700;
+      color: var(--ink); transition: background 0.2s, color 0.2s;
+    }
+    .dialog-sources a:hover { background: var(--ink); color: var(--paper); }
+
+    #lightbox-dialog { width: min(96vw, 1180px); background: #0b1017; color: #f4f6f8; border-radius: 10px; border: 1px solid #2d3744; }
+    .lightbox-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 18px; border-bottom: 1px solid #242e3b; font: 600 12px var(--mono);
+    }
+    .lightbox-body { padding: 16px; display: grid; place-items: center; max-height: 78dvh; }
+    .lightbox-body img { max-height: 74dvh; width: auto; max-width: 100%; border-radius: 6px; }
+
+    #cmd-dialog { width: min(94vw, 540px); border-radius: 10px; overflow: hidden; }
+    .cmd-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px; border-bottom: 1px solid var(--rule); background: var(--panel);
+    }
+    .cmd-head span { font: 700 12px var(--mono); color: var(--accent); }
+    .cmd-list { padding: 10px; display: grid; gap: 6px; background: var(--paper); }
+    .cmd-item {
+      width: 100%; text-align: start; border: 1px solid var(--rule); background: var(--panel);
+      color: var(--ink); padding: 12px 14px; border-radius: 6px; font-weight: 600; font-size: 13px;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .cmd-item:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .cmd-item small { font: 600 11px var(--mono); color: var(--muted); }
+
+    .toast {
+      position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px);
+      opacity: 0; pointer-events: none; z-index: 300;
+      background: var(--ink); color: var(--paper); padding: 12px 20px;
+      border-radius: 6px; font-size: 13px; font-weight: 700;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .toast.show { transform: translate(-50%, 0); opacity: 1; }
+
+
+    /* AI Spin — interactive evaluation lab. Uses synthetic, explicitly labeled data. */
+    .ai-lab-launch {
+      margin-top: 7px; display: block; border: 0; background: transparent;
+      padding: 4px 0; color: var(--accent); cursor: pointer;
+      font: 700 10px/1.5 var(--mono); letter-spacing: .06em;
+      text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px;
+    }
+    .ai-lab-launch:hover, .ai-lab-launch:focus-visible { text-decoration-color: currentColor; }
+    html:lang(ar) .ai-lab-launch { font-family: var(--arabic); letter-spacing: 0; font-size: 11px; }
+    #ai-lab-dialog { width: min(96vw, 1040px); max-height: 94dvh; overflow-y: auto; border-radius: 13px; }
+    .lab-inside { padding: clamp(18px, 3.7vw, 43px); }
+    .lab-heading-bar { display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:17px;border-bottom:1px solid var(--rule); }
+    .lab-heading-bar .micro-label { color:var(--accent); }
+    .lab-hero { display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:28px 0 22px; }
+    .lab-kicker { color:var(--accent);font:700 11px var(--mono);letter-spacing:.1em; }
+    .lab-hero h2 { font:700 clamp(29px,4.5vw,58px)/1.05 var(--display);letter-spacing:-.055em;margin:10px 0 14px;color:var(--ink); }
+    html:lang(ar) .lab-hero h2 { font-family:var(--arabic);line-height:1.5;letter-spacing:-.025em; }
+    .lab-hero p { margin:0;color:var(--soft);line-height:1.8;max-width:670px;font-size:14px; }
+    .lab-atom { width:108px;height:108px;border:1px solid var(--rule);border-radius:50%;position:relative;display:grid;place-items:center;isolation:isolate; }
+    .lab-atom:before,.lab-atom:after { content:'';position:absolute;inset:14px;border:2px solid var(--accent);border-radius:50%;transform:rotate(-38deg) scaleX(.5); }
+    .lab-atom:after { transform:rotate(38deg) scaleX(.5) }
+    .lab-atom span { display:grid;place-items:center;background:var(--panel);color:var(--accent);border:1px solid var(--rule);width:44px;height:44px;border-radius:50%;font:700 12px var(--mono);z-index:2; }
+    .lab-disclaimer { color:var(--ink);background:var(--accent-soft);border-inline-start:4px solid var(--accent);border-radius:4px;padding:13px 16px;font-size:13px;line-height:1.8;margin-bottom:25px; }
+    .lab-cols { display:grid;grid-template-columns:minmax(0,1.1fr) minmax(250px,.75fr);gap:22px; }
+    .lab-panel { background:var(--panel);border:1px solid var(--rule);border-radius:9px;padding:clamp(14px,2.4vw,25px);min-width:0; }
+    .lab-panel-title { margin:0 0 15px;color:var(--ink);font:700 16px var(--font); }
+    html:lang(ar) .lab-panel-title{font-family:var(--arabic)}
+    .lab-control-head { display:flex;justify-content:space-between;gap:12px;align-items:center; }
+    .lab-control-head label { font-size:13px;font-weight:700;line-height:1.6; }
+    .lab-value { border:1px solid var(--rule);padding:3px 10px;border-radius:5px;direction:ltr;font:700 16px var(--mono);white-space:nowrap;color:var(--accent); }
+    #ai-lab-threshold { display:block;direction:ltr;width:100%;accent-color:var(--accent);height:32px;margin:14px 0 5px;cursor:pointer; }
+    .lab-range-ends { display:flex;justify-content:space-between;gap:6px;font:600 11px var(--mono);color:var(--muted);direction:ltr; }
+    .lab-flowheading { display:flex;justify-content:space-between;gap:15px;align-items:baseline;margin:22px 0 10px;font-size:13px;font-weight:700; }
+    .lab-flowheading small { font-weight:500;color:var(--muted);text-align:end; }
+    .lab-flow-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px; }
+    .lab-flow { display:block;text-align:start;width:100%;padding:10px 11px;border-radius:6px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);transition:border-color .15s,background .15s;min-height:74px; }
+    .lab-flow:hover { border-color:var(--accent); }
+    .lab-flow.active { border:2px solid var(--accent);padding:9px 10px;background:var(--accent-soft); }
+    .lab-flow-main { display:flex;align-items:center;justify-content:space-between;gap:9px; }
+    .lab-flow-name { font:700 11px var(--mono);direction:ltr;text-align:start; }
+    .lab-flow-id { font:500 10px var(--mono);color:var(--muted);direction:ltr; }
+    .lab-score-track { display:block; margin-top:10px;height:5px;border-radius:20px;background:var(--rule);overflow:hidden; }
+    .lab-score-fill { display:block;height:100%;background:var(--accent);border-radius:20px; }
+    .lab-flow.flagged .lab-score-fill { background:var(--accent); }
+    .lab-flow:not(.flagged) .lab-score-fill { background:var(--muted); }
+    .lab-metrics { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px; }
+    .lab-metric { border:1px solid var(--rule);border-radius:6px;padding:13px;background:var(--paper); }
+    .lab-metric strong { font:700 clamp(21px,2.4vw,31px)/1.2 var(--display);display:block;color:var(--accent);font-variant-numeric:tabular-nums; }
+    .lab-metric span {display:block;margin-top:5px;font-size:11px;color:var(--muted);line-height:1.55;}
+    .lab-result { background:var(--paper-alt);border:1px solid var(--rule);border-radius:6px;margin-top:17px;padding:17px; }
+    .lab-result-head { display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap; }
+    .lab-result-head strong { font:700 15px var(--display); }
+    .lab-status { font:700 10px var(--mono);border:1px solid var(--rule);padding:6px 8px;border-radius:4px;text-transform:uppercase; }
+    .lab-status.flagged { background:var(--accent);color:var(--accent-ink);border-color:var(--accent); }
+    .lab-result p { color:var(--soft);line-height:1.8;font-size:13px;margin:10px 0 0; }
+    .lab-result small { display:block;color:var(--muted);font-size:12px;line-height:1.8;margin-top:10px; }
+    .lab-explainer { margin-top:17px;border-top:1px solid var(--rule);padding-top:14px;font-size:12px;color:var(--soft);line-height:1.8; }
+    .lab-actions { display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px;border-top:1px solid var(--rule);padding-top:19px; }
+    .lab-reset { background:var(--paper);color:var(--ink);border:1px solid var(--rule);padding:11px 16px;border-radius:6px;font-size:12px;font-weight:700; }
+    .lab-reset:hover { border-color:var(--accent); }
+    .lab-project-link { color:var(--accent);font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:4px; }
+    .lab-footer-note { color:var(--muted);font-size:11px;line-height:1.7;margin-top:14px; }
+    @media(max-width:800px){.lab-cols{grid-template-columns:1fr}.lab-hero{grid-template-columns:1fr}.lab-atom{display:none}}
+    @media(max-width:410px){.lab-flow-grid{grid-template-columns:1fr}.lab-flow{min-height:57px}}
+    @media(prefers-reduced-motion:reduce){.ai-orbit-ring,.ai-emblem-core{animation:none!important}.ai-emblem-btn,.ai-emblem-core img{transition:none!important}}
+
+    @media (max-width: 1050px) {
+      :root { --shell: min(calc(100% - 48px), 1380px); }
+      .hero-grid, .project-layout, .proof-grid { grid-template-columns: 1fr; }
+      .hero-visual { height: 420px; width: min(100%, 640px); margin: 0 auto; }
+      .proof-intro { grid-column: 1 / -1; }
+      .ids-thumb-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 820px) {
+      .desktop-nav, .cmd-trigger { display: none; }
+      .menu-toggle { display: grid; }
+      .mobile-menu {
+        display: flex; position: absolute; top: 81px; left: 0; right: 0;
+        flex-direction: column; background: var(--navbg); backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--rule); padding: 14px 24px 22px;
+      }
+      .mobile-menu[hidden] { display: none; }
+      .mobile-menu a { padding: 14px 0; font-weight: 700; border-bottom: 1px solid var(--rule); font-size: 16px; }
+      .telemetry-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .certs, .dialog-content { grid-template-columns: 1fr; gap: 28px; }
+    }
+    @media (max-width: 560px) {
+      :root { --shell: calc(100% - 32px); }
+      .hero-visual { height: 320px; }
+      .project-art-frame { min-height: 330px; padding: 18px; }
+      .project-image { height: 220px; }
+      .ids-thumb-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-cta-row { flex-direction: column; }
+      .copy-button { width: 100%; }
+      .footer-name { font-size: 9vw; white-space: normal; flex-wrap: wrap; gap: 8px; direction: ltr; }
+      .footer-name i { margin-inline-start: auto; }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main" data-i18n="skip">تجاوز إلى المحتوى</a>
-  <div class="site-glow" aria-hidden="true"></div>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+<a href="#main" class="skip" data-i18n="skip">Skip to content</a>
+<div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
 
-  <header class="masthead shell">
-    <a class="brand" href="#home" aria-label="Abdulrhman Saeed AL-Asmri — home">
-      <span class="brand-mark" aria-hidden="true">A<span class="brand-dot">.</span></span>
-      <span class="brand-caption">ABDULRHMAN<span class="brand-caption-line">SAEED AL-ASMRI</span></span>
+<header class="site-header" id="top">
+  <div class="shell header-inner">
+    <a href="#home" class="wordmark" aria-label="Abdulrhman Saeed AL-Asmri, home">
+      <span class="mark">a<span class="mark-dot">.</span></span>
+      <span class="wordmark-label">ABDULRHMAN<span>SAEED AL-ASMRI</span></span>
     </a>
-    <div class="masthead-actions">
-      <span class="edition" data-i18n="edition">موقع شخصي <span class="edition-sep">/</span> 2026</span>
-      <button class="icon-button" id="themeButton" type="button" aria-label="تبديل المظهر" title="Toggle theme">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.4A8.8 8.8 0 0 1 9.6 3.5a8.8 8.8 0 1 0 10.9 10.9Z"/></svg>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#projects" data-i18n="navProjects">Projects</a>
+      <a href="#skills" data-i18n="navSkills">Stack</a>
+      <a href="#journey" data-i18n="navJourney">Journey</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cmd-trigger" id="cmd-open" type="button" aria-label="Open quick command menu">
+        <span data-i18n="cmdBtn">Quick Jump</span>
+        <kbd>⌘K</kbd>
       </button>
-      <button class="language-button" id="langButton" type="button" aria-label="Switch language">EN</button>
-      <button class="menu-button" id="menuButton" type="button" aria-label="فتح القائمة" aria-controls="siteMenu" aria-expanded="false">
-        <span data-i18n="menu">القائمة</span><span class="menu-lines" aria-hidden="true"><i></i><i></i></span>
+      <button class="text-button" id="lang-toggle" type="button" aria-label="Switch language">عربي</button>
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle light and dark mode">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.9 13a9 9 0 0 1-9.9-9.9 9 9 0 1 0 9.9 9.9Z"/>
+        </svg>
+      </button>
+      <button class="menu-toggle icon-button" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7">
+          <path d="M3 7h18M3 12h18M3 17h18"/>
+        </svg>
       </button>
     </div>
-  </header>
-
-  <nav class="overlay-menu" id="siteMenu" aria-label="Main navigation" aria-hidden="true" inert>
-    <div class="overlay-menu-inner shell">
-      <p class="menu-eyebrow" data-i18n="navigation">التنقل</p>
-      <a href="#home" class="nav-link" data-i18n="navHome">الرئيسية</a>
-      <a href="#about" class="nav-link" data-i18n="navAbout">نبذة</a>
-      <a href="#projects" class="nav-link" data-i18n="navProjects">المشاريع</a>
-      <a href="#contact" class="nav-link" data-i18n="navContact">التواصل</a>
-      <div class="overlay-bottom"><span>ASA®</span><span>abdulrhman-sa.github.io</span></div>
-    </div>
+  </div>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+    <a href="#projects" data-i18n="navProjects">Projects</a>
+    <a href="#skills" data-i18n="navSkills">Stack</a>
+    <a href="#journey" data-i18n="navJourney">Journey</a>
+    <a href="#contact" data-i18n="navContact">Contact</a>
   </nav>
+</header>
 
-  <main id="main">
-    <section class="hero shell" id="home" aria-labelledby="heroTitle">
-      <div class="hero-topline reveal">
-        <span class="eyebrow"><span class="tiny-diamond" aria-hidden="true"></span><span data-i18n="heroEyebrow">مساحة شخصية / أعمال وأفكار</span></span>
-        <span class="micro-index" aria-hidden="true">ASA — 01</span>
+<main id="main">
+  <div class="hero-wrap">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <section id="home" class="hero shell">
+      <div class="eyebrow">
+        <span class="spark"></span>
+        <span data-i18n="eyebrow">COMPUTER ENGINEER · AI / MACHINE LEARNING</span>
+        <span class="eyebrow-index">PORTFOLIO — 2026</span>
       </div>
-      <div class="hero-layout">
+      <div class="hero-grid">
         <div class="hero-copy">
-          <p class="hero-pretitle reveal" data-i18n="hello">أهلاً، أنا</p>
-          <h1 id="heroTitle" class="hero-name" aria-label="Abdulrhman Saeed AL-Asmri"><span class="name-line">Abdulrhman</span><span class="name-line">Saeed</span><span class="name-line name-outline">AL-Asmri<span class="period">.</span></span></h1>
-          <div class="hero-under reveal">
-            <p class="hero-description" data-i18n="heroDescription">هذه مساحتي الشخصية لعرض أعمالي وأفكاري وما سأضيفه لاحقاً.</p>
-            <a href="#about" class="round-arrow" data-magnetic aria-label="انتقل إلى نبذة عني" id="exploreButton"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M4 13l8 8 8-8"/></svg></a>
+          <div class="hero-name-header">
+            <button type="button" class="ai-emblem-btn" id="ai-emblem" title="Open interactive AI Lab" aria-haspopup="dialog" aria-controls="ai-lab-dialog" aria-label="Open interactive AI Lab">
+              <span class="ai-orbit-ring" aria-hidden="true"></span>
+              <span class="ai-emblem-core">
+                <img src="assets/projects/ai-emblem.jpg" alt="AI Engineer interactive emblem">
+              </span>
+            </button>
+            <div>
+              <p class="hello" data-i18n="heroHello">HELLO, I'M</p>
+              <span class="ai-badge-pill">AI / ML ENGINEER · KKU '26</span>
+              <button id="ai-lab-open" class="ai-lab-launch" type="button" aria-haspopup="dialog" aria-controls="ai-lab-dialog" data-i18n="aiLaunch">TRY INTERACTIVE AI ↗</button>
+            </div>
+          </div>
+          <h1><span>Abdulrhman</span><span>Saeed</span><span class="hero-outline">AL-Asmri<em>.</em></span></h1>
+          <p class="hero-deck" data-i18n="heroLead">I turn complex models into clear, useful experiences.</p>
+          <p class="hero-desc" data-i18n="heroDesc">Computer Engineering graduate building in machine learning, computer vision, and thoughtful model evaluation.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-dark" href="#projects"><span data-i18n="explore">Explore projects</span><span aria-hidden="true">↗</span></a>
+            <a class="btn btn-linkedin" href="https://www.linkedin.com/in/abdulrhman-sa/" target="_blank" rel="noopener noreferrer">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a class="btn btn-github-glow" href="https://github.com/abdulrhman-sa" target="_blank" rel="noopener noreferrer">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+          <div class="hero-subline">
+            <span class="live-dot"></span>
+            <span data-i18n="location">Based in Abha, Saudi Arabia · Open to relocation within KSA</span>
           </div>
         </div>
-        <aside class="hero-art reveal" aria-label="ASA typographic symbol">
-          <div class="art-corner art-corner-top"></div>
-          <div class="art-orbit art-orbit-one"></div><div class="art-orbit art-orbit-two"></div>
-          <div class="art-inner"><span class="art-initials" aria-hidden="true">ASA</span><span class="art-line" aria-hidden="true"></span><span class="art-note" data-i18n="artNote">هوية تُكتب من البداية</span></div>
-          <span class="art-side-label" aria-hidden="true">PERSONAL / PORTFOLIO</span>
-          <div class="art-corner art-corner-bottom"></div>
-        </aside>
+        <div class="hero-visual" aria-label="Real project showcase previews">
+          <div class="hero-visual-bg" aria-hidden="true">AI<span>↗</span></div>
+          <a href="#saer" class="preview-card card-top" aria-label="Jump to SAER project">
+            <div class="preview-bar"><span class="preview-dots">● ● ●</span><span>01 — SAER / سعّر</span></div>
+            <div class="preview-image">
+              <img src="assets/projects/saer-showcase.jpg" alt="SAER Arabic vehicle intelligence platform showcase">
+            </div>
+          </a>
+          <a href="#ids" class="preview-card card-bottom" aria-label="Jump to IDS project">
+            <div class="preview-bar"><span class="preview-dots">● ● ●</span><span>02 — AI-IDS TELEMETRY</span></div>
+            <div class="preview-image">
+              <img src="assets/projects/ids-dual.jpg" alt="AI-Enhanced Intrusion Detection dual dashboard showcase">
+            </div>
+          </a>
+          <span class="hero-stamp">REAL WORK.<br>REAL CONTEXT.</span>
+        </div>
       </div>
-      <div class="hero-bottom reveal"><span class="scroll-label"><span class="scroll-stroke" aria-hidden="true"></span><span data-i18n="scroll">مرّر للاستكشاف</span></span><span class="hero-bottom-right">© 2026 <span aria-hidden="true">↗</span></span></div>
+      <div class="hero-footer">
+        <span data-i18n="heroFootLeft">SELECTED WORK / 02 PROJECTS</span>
+        <a href="#proof"><span data-i18n="scrollDown">SCROLL TO DISCOVER</span><span aria-hidden="true">↓</span></a>
+      </div>
     </section>
+  </div>
 
-    <section class="about section-pad" id="about" aria-labelledby="aboutTitle">
-      <div class="shell">
-        <div class="section-label reveal"><span class="overline" data-i18n="aboutEyebrow">من أنا</span><span class="slash-mark" aria-hidden="true">✳</span></div>
-        <div class="about-grid">
-          <div class="about-head reveal"><h2 id="aboutTitle" class="section-title" data-i18n="aboutTitle">مساحة تتطور<br>مع كل خطوة<span class="title-mark">.</span></h2></div>
-          <div class="about-content reveal"><p class="about-lead" data-i18n="aboutLead">أنا Abdulrhman Saeed AL-Asmri. هنا أجمع ما أختار مشاركته من أعمال وتجارب، بتصميم بسيط يضع المحتوى أولاً.</p><p class="body-muted" data-i18n="aboutBody">الملف المهني وتفاصيل المشاريع ستُضاف بعد توثيقها، حتى تبقى المعلومات دقيقة وواضحة.</p>
-            <div class="fact-rows"><div class="fact-row"><span data-i18n="factName">الاسم</span><strong lang="en" dir="ltr">Abdulrhman Saeed AL-Asmri</strong></div><div class="fact-row"><span>GitHub</span><a href="https://github.com/abdulrhman-sa" target="_blank" rel="noopener noreferrer">@abdulrhman-sa <span aria-hidden="true">↗</span></a></div><div class="fact-row"><span data-i18n="factWebsite">الموقع</span><a href="https://abdulrhman-sa.github.io" target="_blank" rel="noopener noreferrer">abdulrhman-sa.github.io <span aria-hidden="true">↗</span></a></div></div>
+  <section class="proof" id="proof" aria-label="Documented evaluation metrics">
+    <div class="shell proof-grid">
+      <div class="proof-intro">
+        <span class="micro-label" data-i18n="proofLabel">A NOTE ON EVIDENCE</span>
+        <p data-i18n="proofText">Numbers mean more when their context is visible.</p>
+      </div>
+      <div class="proof-stat">
+        <strong>94.58<span>%</span></strong>
+        <span data-i18n="proofOne">SAER team top-1 vehicle recognition · 59 classes · reused internal test split</span>
+      </div>
+      <div class="proof-stat">
+        <strong>0.97</strong>
+        <span data-i18n="proofTwo">Intrusion classifier macro-F1 · six-class historical notebook test (566,149 flows)</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section projects shell">
+    <div class="section-head">
+      <div>
+        <div class="section-index"><span class="section-marker"></span><span data-i18n="projectsEyebrow">SELECTED WORK</span><span>/ 02</span></div>
+        <h2 class="huge-title" data-i18n="projectsTitle">WORK<span class="accent">.</span><br>NOT WORDS<span class="accent">.</span></h2>
+      </div>
+      <p class="section-intro" data-i18n="projectsIntro">Two projects. Real code, reported results, and a clear line between what I built and what the team achieved.</p>
+    </div>
+
+    <!-- PROJECT 01: SAER -->
+    <article class="project project-saer" id="saer">
+      <div class="project-topline">
+        <span class="project-num">01 / 02</span>
+        <span class="project-type" data-i18n="saerType">AI ENGINEERING · 3-PERSON TEAM · 2026</span>
+      </div>
+      <div class="project-layout">
+        <div class="project-gallery">
+          <div class="project-art-frame">
+            <div class="project-art-title">
+              <span>SAER <i>®</i></span>
+              <small data-i18n="saerMini">FROM INPUT TO ESTIMATE</small>
+            </div>
+            <div class="project-image" id="saer-zoom-trigger" role="button" tabindex="0" aria-label="Zoom SAER showcase image">
+              <img id="saer-main-img" src="assets/projects/saer-showcase.jpg" alt="SAER Arabic vehicle intelligence platform interface">
+              <span class="zoom-pill" data-i18n="zoomHint">Click to inspect ↗</span>
+            </div>
+          </div>
+
+          <div class="pipeline-box" aria-label="SAER AI Architecture">
+            <div class="pipeline-head">
+              <span data-i18n="saerPipeTitle">AI ARCHITECTURE INSPECTOR</span>
+              <div class="pipe-tabs">
+                <button type="button" class="pipe-tab active" data-pipe="vision" data-i18n="pipeVision">Vision</button>
+                <button type="button" class="pipe-tab" data-pipe="specs" data-i18n="pipeSpecs">Specs</button>
+                <button type="button" class="pipe-tab" data-pipe="ui" data-i18n="pipeUi">RTL App</button>
+              </div>
+            </div>
+            <p class="pipe-detail" id="saer-pipe-desc"></p>
+            <div class="pipe-flow" id="saer-pipe-flow"></div>
           </div>
         </div>
-        <div class="statement reveal" aria-hidden="true"><span>STAY</span><span class="statement-star">✳</span><span>CURIOUS.</span></div>
+
+        <div class="project-info">
+          <div class="project-category" data-i18n="saerCategory">PRODUCT EXPERIENCE / COMPUTER VISION / REGRESSION</div>
+          <h3>SAER<span class="accent">.</span><small>سعّر</small></h3>
+          <p class="project-summary" data-i18n="saerSummary">An Arabic-first experimental platform for vehicle exploration, price estimation from specifications or images, and make/model recognition.</p>
+          <div class="metric">
+            <strong>94.58<span>%</span></strong>
+            <div>
+              <span data-i18n="saerMetricTitle">Top-1 vehicle recognition</span>
+              <small data-i18n="saerMetricNote">Team DINOv2 + CLIP result across 59 classes on a previously used internal test split — not external validation.</small>
+            </div>
+          </div>
+          <div class="contribution">
+            <div class="contribution-label" data-i18n="myContribution">MY CONTRIBUTION</div>
+            <p data-i18n="saerContribution">Built the Arabic RTL vehicle-exploration interface and integrated image- and specification-based estimates into the team's React + TypeScript + FastAPI app.</p>
+          </div>
+          <div class="project-tags">
+            <span class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt="React logo">React</span>
+            <span class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/typescript/typescript-original.svg" alt="TypeScript logo">TypeScript</span>
+            <span class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/fastapi/fastapi-original.svg" alt="FastAPI logo">FastAPI</span>
+            <span class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/pytorch/pytorch-original.svg" alt="PyTorch Vision logo">DINOv2 + CLIP <sup data-i18n="teamTech">team</sup></span>
+          </div>
+          <div class="project-actions">
+            <button class="detail-btn" type="button" data-case="saer"><span data-i18n="caseStudy">Explore case study</span><span aria-hidden="true">↗</span></button>
+            <a class="project-github" href="https://github.com/abdulrhman-sa/saer" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="project-github" href="https://saer-rmsavg637.pages.dev/" target="_blank" rel="noopener noreferrer" data-i18n="liveDemo">Live demo ↗</a>
+          </div>
+        </div>
       </div>
-    </section>
+    </article>
 
-    <section class="projects section-pad shell" id="projects" aria-labelledby="projectsTitle">
-      <div class="section-label reveal"><span class="overline" data-i18n="projectsEyebrow">الأعمال</span><span class="slash-mark" aria-hidden="true">✳</span></div>
-      <div class="projects-heading reveal"><h2 id="projectsTitle" class="section-title" data-i18n="projectsTitle">أعمال مختارة<span class="title-mark">.</span></h2><p class="body-muted" data-i18n="projectsIntro">سيظهر هنا كل مشروع بمعلوماته الحقيقية وروابطه.</p></div>
-      <div id="projectsList" class="projects-list" aria-live="polite"><div class="empty-state reveal"><span class="empty-glyph" aria-hidden="true">✳</span><div class="empty-heading"><span class="empty-kicker">THE ARCHIVE</span><h3 data-i18n="emptyTitle">هنا تبدأ الحكاية.</h3><p data-i18n="emptyBody">لم تُضَف مشاريع موثقة بعد. ستظهر هنا عند توفير تفاصيلها وروابطها.</p></div><span class="empty-corner" aria-hidden="true">↗</span></div></div>
-    </section>
+    <!-- PROJECT 02: IDS -->
+    <article class="project project-ids" id="ids">
+      <div class="project-topline">
+        <span class="project-num">02 / 02</span>
+        <span class="project-type" data-i18n="idsType">GRADUATION PROJECT · 5-PERSON TEAM · 2025–2026</span>
+      </div>
+      <div class="project-layout">
+        <div class="project-gallery">
+          <div class="project-art-frame">
+            <div class="project-art-title">
+              <span>IDS <i>®</i></span>
+              <small data-i18n="idsMini">SIGNALS TO INSIGHTS</small>
+            </div>
+            <div class="project-image" id="ids-zoom-trigger" role="button" tabindex="0" aria-label="Zoom active IDS dashboard screenshot">
+              <img id="ids-main-img" src="assets/projects/ids-dual.jpg" alt="AI-Enhanced Intrusion Detection System dual dashboard overview">
+              <span class="zoom-pill" data-i18n="zoomHint">Click to inspect ↗</span>
+            </div>
+          </div>
 
-    <section class="contact section-pad" id="contact" aria-labelledby="contactTitle"><div class="shell contact-shell">
-      <div class="section-label reveal"><span class="overline" data-i18n="contactEyebrow">لنتواصل</span><span class="slash-mark" aria-hidden="true">✳</span></div>
-      <div class="contact-grid"><div class="contact-main reveal"><p class="contact-super" data-i18n="contactPre">لديك فكرة أو ترغب في التواصل؟</p><h2 class="contact-title" id="contactTitle" data-i18n="contactTitle">لنبدأ<br><em>محادثة.</em></h2><a class="contact-cta" href="https://github.com/abdulrhman-sa" target="_blank" rel="noopener noreferrer" data-magnetic><span data-i18n="githubCta">تواصل عبر GitHub</span><span class="cta-circle" aria-hidden="true">↗</span></a></div><div class="contact-side reveal"><div class="contact-symbol" aria-hidden="true">A<span>.</span></div><p data-i18n="contactDetail">يمكنك استعراض حسابي على GitHub أو مشاركة رابط هذا الموقع.</p><div class="contact-actions"><button type="button" id="copyButton" class="text-action"><span data-i18n="copyLink">نسخ رابط الموقع</span><span aria-hidden="true">↗</span></button><button type="button" id="shareButton" class="text-action"><span data-i18n="shareLink">مشاركة الموقع</span><span aria-hidden="true">↗</span></button></div></div></div>
-    </div></section>
-  </main>
+          <div class="ids-telemetry-panel" aria-label="IDS Threat Classification States">
+            <div class="telemetry-header">
+              <span class="telemetry-title" id="ids-state-label">DUAL SYSTEM OVERVIEW · WEB ATTACK &amp; DOS</span>
+              <span class="telemetry-badge sev-critical" id="ids-sev-badge">CRITICAL · 95</span>
+            </div>
+            <div class="telemetry-metrics">
+              <div class="t-box"><small data-i18n="tThreat">THREAT LEVEL</small><strong id="ids-t-level">95 / 100</strong></div>
+              <div class="t-box"><small data-i18n="tConf">CONFIDENCE</small><strong id="ids-t-conf">100%</strong></div>
+              <div class="t-box"><small data-i18n="tRisk">AVG RISK</small><strong id="ids-t-risk">57.5</strong></div>
+              <div class="t-box"><small data-i18n="tAlerts">ALERTS</small><strong id="ids-t-alerts">1</strong></div>
+            </div>
+            <div class="risk-bar-track" aria-hidden="true">
+              <div class="risk-bar-fill" id="ids-risk-fill" style="width:95%;background:#dc2626;"></div>
+            </div>
 
-  <footer class="footer shell"><a class="footer-top" href="#home" aria-label="Back to top"><span>ASA®</span><span class="footer-top-arrow" aria-hidden="true">↑</span></a><div class="footer-bottom"><span>© <span id="footerYear">2026</span> Abdulrhman Saeed AL-Asmri</span><span data-i18n="footerNote">صُنع بعناية، ويتطور باستمرار.</span></div></footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+            <div class="ids-strip-label">
+              <span data-i18n="idsGalleryPrompt">SELECT SYSTEM STATE SCREENSHOT (7 CAPTURES)</span>
+              <span id="ids-counter">01 / 07</span>
+            </div>
+            <div class="ids-thumb-grid" id="ids-thumb-grid">
+              <button type="button" class="ids-thumb active" data-ids-idx="0">
+                <img src="assets/projects/ids-dual.jpg" alt="Dual IDS overview Web Attack and DoS">
+                <div class="ids-thumb-meta"><span>Overview</span><em>95/75</em></div>
+              </button>
+              <button type="button" class="ids-thumb" data-ids-idx="1">
+                <img src="assets/projects/ids-benign.png" alt="BENIGN traffic threat level 5">
+                <div class="ids-thumb-meta"><span>BENIGN</span><em>LVL 5</em></div>
+              </button>
+              <button type="button" class="ids-thumb" data-ids-idx="2">
+                <img src="assets/projects/ids-portscan.png" alt="PortScan attack threat level 25">
+                <div class="ids-thumb-meta"><span>PortScan</span><em>LVL 25</em></div>
+              </button>
+              <button type="button" class="ids-thumb" data-ids-idx="3">
+                <img src="assets/projects/ids-bruteforce.png" alt="Brute Force attack threat level 50">
+                <div class="ids-thumb-meta"><span>Brute Force</span><em>LVL 50</em></div>
+              </button>
+              <button type="button" class="ids-thumb" data-ids-idx="4">
+                <img src="assets/projects/ids-dos-1.png" alt="DoS escalating threat level 75">
+                <div class="ids-thumb-meta"><span>DoS · Spike</span><em>LVL 75</em></div>
+              </button>
+              <button type="button" class="ids-thumb" data-ids-idx="5">
+                <img src="assets/projects/ids-dos-2.png" alt="DoS sustained threat level 75">
+                <div class="ids-thumb-meta"><span>DoS · High</span><em>LVL 75</em></div>
+              </button>
+              <button type="button" class="ids-thumb" data-ids-idx="6">
+                <img src="assets/projects/ids-webattack.png" alt="Web Attack critical threat level 95">
+                <div class="ids-thumb-meta"><span>Web Attack</span><em>LVL 95</em></div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <div class="project-category" data-i18n="idsCategory">NETWORK SECURITY / MACHINE LEARNING / MODEL EVALUATION</div>
+          <h3>INTRUSION<span class="accent">.</span><small data-i18n="idsSubtitle">DETECTION SYSTEM</small></h3>
+          <p class="project-summary" data-i18n="idsSummary">A graduation project classifying CICIDS2017 network flows, assessing threat severity, and visualizing results in a Flask dashboard.</p>
+          <div class="metric">
+            <strong>0.97</strong>
+            <div>
+              <span data-i18n="idsMetricTitle">Macro-F1 · six classes</span>
+              <small data-i18n="idsMetricNote">Historical notebook output on 566,149 held-out flows (stratified 80/20); rare-attack recall was 0.77 on 402 examples.</small>
+            </div>
+          </div>
+          <div class="contribution">
+            <div class="contribution-label" data-i18n="myContribution">MY CONTRIBUTION</div>
+            <p data-i18n="idsContribution">Trained and evaluated the six-class Random Forest classifier, designed a five-level risk scheme, and presented results in a Flask dashboard.</p>
+          </div>
+          <div class="project-tags">
+            <span class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="Python logo">Python</span>
+            <span class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/scikitlearn/scikitlearn-original.svg" alt="scikit-learn logo">Random Forest</span>
+            <span class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/flask/flask-original.svg" alt="Flask logo">Flask</span>
+            <span class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/pandas/pandas-original.svg" alt="pandas logo">CICIDS2017</span>
+          </div>
+          <div class="project-actions">
+            <button class="detail-btn" type="button" data-case="ids"><span data-i18n="caseStudy">Explore case study</span><span aria-hidden="true">↗</span></button>
+            <a class="project-github" href="https://github.com/abdulrhman-sa/AI-Enhanced-Intrusion-Detection-System-with-Risk-Assessment" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="project-github" href="https://github.com/abdulrhman-sa/AI-Enhanced-Intrusion-Detection-System-with-Risk-Assessment/blob/main/docs/reports/graduation-report.pdf" target="_blank" rel="noopener noreferrer" data-i18n="report">Full report ↗</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- REDESIGNED FULL-WIDTH "WHAT I USE" SECTION WITH REAL LOGOS & ALL TOOLS/SKILLS -->
+  <section id="skills" class="stack-section section">
+    <div class="shell">
+      <div class="stack-header">
+        <div>
+          <div class="section-index"><span class="section-marker"></span><span data-i18n="skillsEyebrow">WHAT I USE</span></div>
+          <h2 class="huge-title" data-i18n="stackTitle">CORE STACK<span class="accent">.</span><br>&amp; SKILLS<span class="accent">.</span></h2>
+        </div>
+        <div class="stack-filters" role="tablist" aria-label="Filter stack and skills">
+          <button type="button" class="stack-filter-btn active" data-stack="all" data-i18n="tabAll">All Stack</button>
+          <button type="button" class="stack-filter-btn" data-stack="ml" data-i18n="tabML">AI &amp; ML</button>
+          <button type="button" class="stack-filter-btn" data-stack="build" data-i18n="tabBuild">Systems &amp; UI</button>
+          <button type="button" class="stack-filter-btn" data-stack="eval" data-i18n="tabEval">Evaluation &amp; Data</button>
+        </div>
+      </div>
+
+      <div class="stack-grid" id="stack-grid"></div>
+      <p class="stack-note" data-i18n="skillNote">Listed tools come from my CV and documented work. Team technologies do not imply sole authorship.</p>
+    </div>
+  </section>
+
+  <section id="journey" class="journey section shell">
+    <div class="section-head">
+      <div>
+        <div class="section-index"><span class="section-marker"></span><span data-i18n="journeyEyebrow">THE PATH SO FAR</span></div>
+        <h2 class="huge-title" data-i18n="journeyTitle">BUILT ON<br><span class="accent">PRACTICE.</span></h2>
+      </div>
+      <p class="section-intro" data-i18n="journeyIntro">Education, focused learning, and practical experience.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-year">2026</span>
+        <div><h3 data-i18n="journey1Title">B.Sc. in Computer Engineering</h3><p data-i18n="journey1Desc">King Khalid University · Abha, Saudi Arabia</p></div>
+        <span class="timeline-arrow">↗</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2026</span>
+        <div><h3 data-i18n="journey2Title">AI Engineering Bootcamp · 200 hours</h3><p data-i18n="journey2Desc">Olo Academy · Sep–Nov 2026 · in partnership with MCIT; SAER team capstone</p></div>
+        <span class="timeline-arrow">↗</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2024</span>
+        <div><h3 data-i18n="journey3Title">Cooperative IT Training</h3><p data-i18n="journey3Desc">Aseer Municipality · Jun–Aug 2024 · monitored 3 internal servers; supported 25+ user devices</p></div>
+        <span class="timeline-arrow">↗</span>
+      </div>
+    </div>
+    <div class="certs">
+      <div>
+        <span class="micro-label" data-i18n="certLabel">COMPLETION</span>
+        <p data-i18n="cert">AWS Certified AI Practitioner Learning Path — Certificate of Completion (not an AWS certification)</p>
+      </div>
+      <div>
+        <span class="micro-label" data-i18n="languageLabel">LANGUAGES</span>
+        <p data-i18n="languages">Arabic (native) · English (professional working proficiency)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="shell">
+      <div class="contact-top">
+        <span class="section-index"><span class="section-marker"></span><span data-i18n="contactLabel">LET'S CONNECT</span></span>
+        <span data-i18n="contactAside">FOR IDEAS, COLLABORATION, OR OPPORTUNITIES</span>
+      </div>
+      <h2 class="contact-title" data-i18n="contactTitle">LET’S MAKE<br>IT <em>MATTER.</em></h2>
+      <div class="contact-cta-row">
+        <a class="contact-email" href="mailto:abdulrhmansa2003@gmail.com">
+          <span>abdulrhmansa2003@gmail.com</span><span aria-hidden="true">↗</span>
+        </a>
+        <button type="button" class="copy-button" id="copy-email">
+          <span data-i18n="copyEmail">Copy email</span><span aria-hidden="true">⧉</span>
+        </button>
+      </div>
+      <div class="contact-social">
+        <a class="btn btn-linkedin" href="https://www.linkedin.com/in/abdulrhman-sa/" target="_blank" rel="noopener noreferrer">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          <span>LinkedIn ↗</span>
+        </a>
+        <a class="btn btn-dark" href="https://github.com/abdulrhman-sa" target="_blank" rel="noopener noreferrer">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          <span>GitHub ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer shell">
+  <div class="footer-name">ABDULRHMAN <span>AL-ASMRI</span><i>©</i></div>
+  <div class="footer-meta">
+    <span>© <span id="year">2026</span> ABDULRHMAN SAEED AL-ASMRI</span>
+    <span data-i18n="footerNote">MADE WITH PURPOSE. BUILT ON EVIDENCE.</span>
+    <a href="#home" data-i18n="backTop">BACK TO TOP ↑</a>
+  </div>
+</footer>
+
+
+<!-- Interactive AI Spin: offline, educational threshold lab (NOT the research model). -->
+<dialog id="ai-lab-dialog" aria-labelledby="ai-lab-title" aria-describedby="ai-lab-intro">
+  <div class="lab-inside">
+    <div class="lab-heading-bar"><span class="micro-label" data-lab="top">AI SPIN / INTERACTIVE LAB</span><button class="close-dialog" id="close-ai-lab" type="button" data-lab="close">✕ CLOSE</button></div>
+    <div class="lab-hero">
+      <div><span class="lab-kicker" data-lab="kicker">01 / EXPLORE THE DECISION</span><h2 id="ai-lab-title" data-lab="title">WHEN DOES AN ALERT FIRE<span class="accent">?</span></h2><p id="ai-lab-intro" data-lab="intro">Move the decision threshold. Watch which example network flows raise an alert and how that changes precision and recall.</p></div>
+      <div class="lab-atom" aria-hidden="true"><span>AI</span></div>
+    </div>
+    <p class="lab-disclaimer" data-lab="disclaimer">EDUCATIONAL SIMULATION ONLY — Ten invented examples and illustrative scores. This is NOT a live threat detector, NOT the project's trained Random Forest, and NOT its five-level risk score.</p>
+    <div class="lab-cols">
+      <section class="lab-panel" aria-labelledby="lab-adjust-title">
+        <h3 class="lab-panel-title" id="lab-adjust-title" data-lab="adjust">01 — Set your alert threshold</h3>
+        <div class="lab-control-head"><label id="ai-lab-range-label" for="ai-lab-threshold" data-lab="threshold">Alert when demo score is at least</label><output class="lab-value" id="ai-lab-value" for="ai-lab-threshold">50%</output></div>
+        <input id="ai-lab-threshold" type="range" min="20" max="90" step="5" value="50" aria-labelledby="ai-lab-range-label" aria-valuetext="50%">
+        <div class="lab-range-ends"><span data-lab="moreAlerts">20% / MORE ALERTS</span><span data-lab="fewerAlerts">90% / FEWER ALERTS</span></div>
+        <div class="lab-flowheading"><span data-lab="flows">02 — Inspect example flows</span><small data-lab="flowHint">Select any flow to inspect it</small></div>
+        <div id="ai-flow-grid" class="lab-flow-grid" role="group" aria-label="Demo network flows"></div>
+      </section>
+      <section class="lab-panel" aria-labelledby="lab-outcomes-title">
+        <h3 class="lab-panel-title" id="lab-outcomes-title" data-lab="outcomes">03 — See the trade-off</h3>
+        <div class="lab-metrics" aria-live="polite" aria-atomic="true">
+          <div class="lab-metric"><strong id="ai-alerts">6/10</strong><span data-lab="alerts">Alerts raised</span></div>
+          <div class="lab-metric"><strong id="ai-precision">83%</strong><span data-lab="precision">Precision — flagged alerts that are attacks</span></div>
+          <div class="lab-metric"><strong id="ai-recall">83%</strong><span data-lab="recall">Recall — attacks caught</span></div>
+          <div class="lab-metric"><strong id="ai-missed">1</strong><span data-lab="missed">Missed attacks</span></div>
+        </div>
+        <div class="lab-result" aria-live="polite" aria-atomic="true">
+          <div class="lab-result-head"><strong id="ai-selected-title">FLOW 01</strong><span class="lab-status" id="ai-selected-status">FLAGGED</span></div>
+          <p id="ai-selected-description"></p><small id="ai-selected-truth"></small>
+        </div>
+        <p class="lab-explainer" id="ai-lab-explanation">Lower thresholds often catch more threats, but may trigger more false alarms. Try moving the slider to see the difference.</p>
+      </section>
+    </div>
+    <div class="lab-actions"><button type="button" id="ai-lab-reset" class="lab-reset" data-lab="reset">↺ Reset experiment</button><a class="lab-project-link" href="https://github.com/abdulrhman-sa/AI-Enhanced-Intrusion-Detection-System-with-Risk-Assessment" target="_blank" rel="noopener noreferrer" data-lab="projectLink">EXPLORE THE REAL IDS PROJECT ↗</a></div>
+    <p class="lab-footer-note" data-lab="footer">This toy demo illustrates a binary threshold only. The real graduation project reports six-class notebook evaluation; its model scores and risk policy are different.</p>
+  </div>
+</dialog>
+
+<dialog id="case-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-inner">
+    <div class="dialog-nav">
+      <span class="micro-label" id="dialog-counter">CASE STUDY / 01</span>
+      <button class="close-dialog" id="close-dialog" aria-label="Close case study" type="button">✕ <span data-i18n="close">CLOSE</span></button>
+    </div>
+    <div class="dialog-intro">
+      <span id="dialog-category" class="micro-label"></span>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-intro"></p>
+    </div>
+    <div class="dialog-hero-media">
+      <img id="dialog-hero-image" alt="">
+    </div>
+    <div class="dialog-content">
+      <div><h3 data-i18n="contributionHeading">MY CONTRIBUTION</h3><p id="dialog-mine"></p></div>
+      <div><h3 data-i18n="teamHeading">TEAM WORK &amp; EVALUATION</h3><p id="dialog-team"></p></div>
+      <div><h3 data-i18n="methodHeading">PROCESS</h3><ol id="dialog-process"></ol></div>
+      <div><h3 data-i18n="limitationsHeading">IMPORTANT CONTEXT</h3><p id="dialog-limitations"></p></div>
+    </div>
+    <div class="dialog-sources">
+      <a id="dialog-repo" href="#projects" target="_blank" rel="noopener noreferrer" data-i18n="sourceRepo">VIEW SOURCE CODE ↗</a>
+      <a id="dialog-doc" href="#projects" target="_blank" rel="noopener noreferrer" data-i18n="sourceEvidence">SEE EVALUATION EVIDENCE ↗</a>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="lightbox-dialog" aria-label="Full resolution screenshot viewer">
+  <div class="lightbox-bar">
+    <span id="lightbox-caption">PREVIEW</span>
+    <button type="button" class="close-dialog" id="close-lightbox">✕ <span data-i18n="close">CLOSE</span></button>
+  </div>
+  <div class="lightbox-body">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+</dialog>
+
+<dialog id="cmd-dialog" aria-label="Quick command menu">
+  <div class="cmd-head">
+    <span data-i18n="cmdTitle">COMMAND PALETTE</span>
+    <button type="button" class="close-dialog" id="close-cmd">ESC</button>
+  </div>
+  <div class="cmd-list" id="cmd-list">
+    <button type="button" class="cmd-item" data-cmd="saer"><span data-i18n="cmdSaer">Jump to 01 — SAER (سعّر)</span><small>#saer</small></button>
+    <button type="button" class="cmd-item" data-cmd="ids"><span data-i18n="cmdIds">Jump to 02 — AI-IDS Telemetry</span><small>#ids</small></button>
+    <button type="button" class="cmd-item" data-cmd="skills"><span data-i18n="cmdSkills">Jump to Stack &amp; Skills</span><small>#skills</small></button>
+    <button type="button" class="cmd-item" data-cmd="lang"><span data-i18n="cmdLang">Switch Language (AR / EN)</span><small>L</small></button>
+    <button type="button" class="cmd-item" data-cmd="theme"><span data-i18n="cmdTheme">Toggle Dark / Light Mode</span><small>T</small></button>
+    <button type="button" class="cmd-item" data-cmd="email"><span data-i18n="cmdCopy">Copy Contact Email</span><small>C</small></button>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  'use strict';
+
+  const D = 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/';
+
+  const stackItems = [
+    { name: 'Python', cat: 'ml', subEn: 'Core ML & Data', subAr: 'البرمجة وتعلم الآلة', icon: D + 'python/python-original.svg' },
+    { name: 'scikit-learn', cat: 'ml', subEn: 'Random Forest & Splits', subAr: 'النماذج والتقسيم الطبقي', icon: D + 'scikitlearn/scikitlearn-original.svg' },
+    { name: 'pandas', cat: 'ml', subEn: 'Tabular Pipelines', subAr: 'معالجة البيانات الجدولية', icon: D + 'pandas/pandas-original.svg' },
+    { name: 'NumPy', cat: 'ml', subEn: 'Vector Operations', subAr: 'العمليات العددية', icon: D + 'numpy/numpy-original.svg' },
+    { name: 'DINOv2 + CLIP', cat: 'ml', subEn: 'Team Vision · SAER', subAr: 'رؤية حاسوبية (الفريق)', icon: D + 'pytorch/pytorch-original.svg' },
+    { name: 'Random Forest', cat: 'ml', subEn: '6-Class IDS Classifier', subAr: 'تصنيف الشبكات (IDS)', icon: D + 'scikitlearn/scikitlearn-original.svg' },
+    { name: 'Regression', cat: 'ml', subEn: 'Price Estimation', subAr: 'نماذج الانحدار', icon: D + 'matplotlib/matplotlib-original.svg' },
+    { name: 'Image Classification', cat: 'ml', subEn: '59 Vehicle Classes', subAr: 'تصنيف الصور (59 فئة)', icon: D + 'opencv/opencv-original.svg' },
+
+    { name: 'React', cat: 'build', subEn: 'SAER Frontend', subAr: 'واجهة منصة سعّر', icon: D + 'react/react-original.svg' },
+    { name: 'TypeScript', cat: 'build', subEn: 'Type-Safe UI', subAr: 'تطوير واجهات آمنة', icon: D + 'typescript/typescript-original.svg' },
+    { name: 'FastAPI', cat: 'build', subEn: 'Model Serving API', subAr: 'خدمة واجهات النماذج', icon: D + 'fastapi/fastapi-original.svg' },
+    { name: 'Flask', cat: 'build', subEn: 'IDS Risk Dashboard', subAr: 'لوحة تحكم IDS', icon: D + 'flask/flask-original.svg' },
+    { name: 'Arabic RTL UI', cat: 'build', subEn: 'Bilingual UX', subAr: 'واجهات عربية RTL', icon: D + 'html5/html5-original.svg' },
+    { name: 'REST APIs', cat: 'build', subEn: 'Client-Model Bridge', subAr: 'ربط النماذج بالواجهات', icon: D + 'json/json-original.svg' },
+    { name: 'Git / GitHub', cat: 'build', subEn: 'Version Control', subAr: 'إدارة الكود والنسخ', icon: D + 'git/git-original.svg' },
+    { name: 'Linux', cat: 'build', subEn: 'Server & Runtime', subAr: 'بيئة التشغيل والخوادم', icon: D + 'linux/linux-original.svg' },
+
+    { name: 'Macro-F1', cat: 'eval', subEn: 'Imbalanced Metrics', subAr: 'تقييم الفئات غير المتوازنة', icon: D + 'jupyter/jupyter-original.svg' },
+    { name: 'Per-Class Recall', cat: 'eval', subEn: 'Rare Attack Audit', subAr: 'قياس استدعاء الهجمات', icon: D + 'anaconda/anaconda-original.svg' },
+    { name: 'MAE', cat: 'eval', subEn: 'Price Error Bounds', subAr: 'متوسط الخطأ المطلق', icon: D + 'plotly/plotly-original.svg' },
+    { name: 'Stratified Splits', cat: 'eval', subEn: '80/20 Validation', subAr: 'تقسيم طبقي للاختبار', icon: D + 'kaggle/kaggle-original.svg' },
+    { name: 'Model Evaluation', cat: 'eval', subEn: 'Split Transparency', subAr: 'اختبار وتوثيق النماذج', icon: D + 'vscode/vscode-original.svg' },
+    { name: 'Data Preprocessing', cat: 'eval', subEn: '2.83M CICIDS2017 Flows', subAr: 'تنظيف وتجهيز البيانات', icon: D + 'sqlite/sqlite-original.svg' }
+  ];
+
+  const idsStates = [
+    { src: 'assets/projects/ids-dual.jpg', labelEn: 'DUAL SYSTEM OVERVIEW · WEB ATTACK & DOS', labelAr: 'نظرة مزدوجة للنظام · هجوم ويب و DoS', badge: 'CRITICAL · 95', sevClass: 'sev-critical', level: '95 / 100', pct: 95, barColor: '#dc2626', conf: '100%', risk: '57.5', alerts: '1' },
+    { src: 'assets/projects/ids-benign.png', labelEn: 'STATE 01 · BENIGN NETWORK FLOW', labelAr: 'الحالة 01 · تدفق شبكة طبيعي (BENIGN)', badge: 'NORMAL · 5', sevClass: 'sev-normal', level: '5 / 100', pct: 5, barColor: '#16a34a', conf: '99%', risk: '5.0', alerts: '0' },
+    { src: 'assets/projects/ids-portscan.png', labelEn: 'STATE 02 · PORTSCAN DETECTION', labelAr: 'الحالة 02 · رصد فحص المنافذ (PortScan)', badge: 'LOW · 25', sevClass: 'sev-low', level: '25 / 100', pct: 25, barColor: '#2563eb', conf: '100%', risk: '8.33', alerts: '1' },
+    { src: 'assets/projects/ids-bruteforce.png', labelEn: 'STATE 03 · BRUTE FORCE ATTEMPT', labelAr: 'الحالة 03 · محاولة تخمين كلمات المرور (Brute Force)', badge: 'MEDIUM · 50', sevClass: 'sev-medium', level: '50 / 100', pct: 50, barColor: '#ca8a04', conf: '100%', risk: '70.83', alerts: '1' },
+    { src: 'assets/projects/ids-dos-1.png', labelEn: 'STATE 04 · DOS TRAFFIC SPIKE', labelAr: 'الحالة 04 · تصاعد هجوم حجب الخدمة (DoS)', badge: 'HIGH · 75', sevClass: 'sev-high', level: '75 / 100', pct: 75, barColor: '#ea580c', conf: '100%', risk: '41.67', alerts: '1' },
+    { src: 'assets/projects/ids-dos-2.png', labelEn: 'STATE 05 · SUSTAINED DOS ATTACK', labelAr: 'الحالة 05 · استمرار هجوم حجب الخدمة (DoS)', badge: 'HIGH · 75', sevClass: 'sev-high', level: '75 / 100', pct: 75, barColor: '#ea580c', conf: '100%', risk: '66.67', alerts: '1' },
+    { src: 'assets/projects/ids-webattack.png', labelEn: 'STATE 06 · CRITICAL WEB ATTACK', labelAr: 'الحالة 06 · هجوم تطبيقات الويب (Web Attack)', badge: 'CRITICAL · 95', sevClass: 'sev-critical', level: '95 / 100', pct: 95, barColor: '#dc2626', conf: '100%', risk: '57.5', alerts: '1' }
+  ];
+
+  const pipeData = {
+    en: {
+      vision: {
+        desc: 'Dual-encoder visual recognition pipeline (team model) classifying 59 vehicle make/model categories from user photos.',
+        nodes: [
+          { text: 'Car Photo', icon: D + 'opencv/opencv-original.svg' },
+          { text: 'DINOv2 + CLIP', icon: D + 'pytorch/pytorch-original.svg' },
+          { text: '59-Class Head', icon: D + 'python/python-original.svg' },
+          { text: '94.58% Top-1', icon: '' }
+        ]
+      },
+      specs: {
+        desc: 'Structured specification regression & market comparison flow connected via FastAPI endpoints.',
+        nodes: [
+          { text: 'Vehicle Specs', icon: D + 'pandas/pandas-original.svg' },
+          { text: 'FastAPI Route', icon: D + 'fastapi/fastapi-original.svg' },
+          { text: 'Price Estimator', icon: D + 'scikitlearn/scikitlearn-original.svg' },
+          { text: 'SAR Output', icon: '' }
+        ]
+      },
+      ui: {
+        desc: 'Arabic-first RTL React + TypeScript interface I built to unify exploration, comparisons, and model estimates.',
+        nodes: [
+          { text: 'React', icon: D + 'react/react-original.svg' },
+          { text: 'TypeScript', icon: D + 'typescript/typescript-original.svg' },
+          { text: 'Arabic RTL', icon: D + 'html5/html5-original.svg' },
+          { text: 'Live Experience', icon: '' }
+        ]
+      }
+    },
+    ar: {
+      vision: {
+        desc: 'مسار تعرف بصري مزدوج (نموذج الفريق) لتصنيف 59 فئة من السيارات عبر الصور بدقة Top-1 تبلغ 94.58%.',
+        nodes: [
+          { text: 'صورة السيارة', icon: D + 'opencv/opencv-original.svg' },
+          { text: 'DINOv2 + CLIP', icon: D + 'pytorch/pytorch-original.svg' },
+          { text: 'تصنيف 59 فئة', icon: D + 'python/python-original.svg' },
+          { text: 'دقة 94.58%', icon: '' }
+        ]
+      },
+      specs: {
+        desc: 'مسار تقدير السعر من المواصفات ومقارنة السوق المرتبط عبر نقاط FastAPI.',
+        nodes: [
+          { text: 'مواصفات السيارة', icon: D + 'pandas/pandas-original.svg' },
+          { text: 'FastAPI', icon: D + 'fastapi/fastapi-original.svg' },
+          { text: 'نموذج التسعير', icon: D + 'scikitlearn/scikitlearn-original.svg' },
+          { text: 'السعر بالريال', icon: '' }
+        ]
+      },
+      ui: {
+        desc: 'واجهة عربية RTL بـ React و TypeScript قمت ببنائها لتوحيد استكشاف السيارات ونتائج النماذج.',
+        nodes: [
+          { text: 'React', icon: D + 'react/react-original.svg' },
+          { text: 'TypeScript', icon: D + 'typescript/typescript-original.svg' },
+          { text: 'واجهة RTL', icon: D + 'html5/html5-original.svg' },
+          { text: 'تجربة حية', icon: '' }
+        ]
+      }
+    }
+  };
+
+  const dict = {
+    en: {
+      skip: 'Skip to content', navProjects: 'Projects', navSkills: 'Stack', navJourney: 'Journey', navContact: 'Contact',
+      cmdBtn: 'Quick Jump', cmdTitle: 'COMMAND PALETTE', cmdSaer: 'Jump to 01 — SAER (سعّر)',
+      cmdIds: 'Jump to 02 — AI-IDS Telemetry', cmdSkills: 'Jump to Stack & Skills', cmdLang: 'Switch Language (AR / EN)',
+      cmdTheme: 'Toggle Dark / Light Mode', cmdCopy: 'Copy Contact Email',
+      eyebrow: 'COMPUTER ENGINEER · AI / MACHINE LEARNING', heroHello: "HELLO, I'M",
+      heroLead: 'I turn complex models into clear, useful experiences.',
+      heroDesc: 'Computer Engineering graduate building in machine learning, computer vision, and thoughtful model evaluation.',
+      explore: 'Explore projects',
+      location: 'Based in Abha, Saudi Arabia · Open to relocation within KSA',
+      heroFootLeft: 'SELECTED WORK / 02 PROJECTS', scrollDown: 'SCROLL TO DISCOVER',
+      proofLabel: 'A NOTE ON EVIDENCE', proofText: 'Numbers mean more when their context is visible.',
+      proofOne: 'SAER team top-1 vehicle recognition · 59 classes · reused internal test split',
+      proofTwo: 'Intrusion classifier macro-F1 · six-class historical notebook test (566,149 flows)',
+      projectsEyebrow: 'SELECTED WORK', projectsTitle: 'WORK<span class="accent">.</span><br>NOT WORDS<span class="accent">.</span>',
+      projectsIntro: 'Two projects. Real code, reported results, and a clear line between what I built and what the team achieved.',
+      saerType: 'AI ENGINEERING · 3-PERSON TEAM · 2026', saerMini: 'FROM INPUT TO ESTIMATE',
+      zoomHint: 'Click to inspect ↗', saerPipeTitle: 'AI ARCHITECTURE INSPECTOR',
+      pipeVision: 'Vision', pipeSpecs: 'Specs', pipeUi: 'RTL App',
+      saerCategory: 'PRODUCT EXPERIENCE / COMPUTER VISION / REGRESSION',
+      saerSummary: 'An Arabic-first experimental platform for vehicle exploration, price estimation from specifications or images, and make/model recognition.',
+      saerMetricTitle: 'Top-1 vehicle recognition',
+      saerMetricNote: 'Team DINOv2 + CLIP result across 59 classes on a previously used internal test split — not external validation.',
+      myContribution: 'MY CONTRIBUTION',
+      saerContribution: "Built the Arabic RTL vehicle-exploration interface and integrated image- and specification-based estimates into the team's React + TypeScript + FastAPI app.",
+      teamTech: 'team', caseStudy: 'Explore case study', liveDemo: 'Live demo ↗',
+      idsType: 'GRADUATION PROJECT · 5-PERSON TEAM · 2025–2026', idsMini: 'SIGNALS TO INSIGHTS',
+      tThreat: 'THREAT LEVEL', tConf: 'CONFIDENCE', tRisk: 'AVG RISK', tAlerts: 'ALERTS',
+      idsGalleryPrompt: 'SELECT SYSTEM STATE SCREENSHOT (7 CAPTURES)',
+      idsCategory: 'NETWORK SECURITY / MACHINE LEARNING / MODEL EVALUATION', idsSubtitle: 'DETECTION SYSTEM',
+      idsSummary: 'A graduation project classifying CICIDS2017 network flows, assessing threat severity, and visualizing results in a Flask dashboard.',
+      idsMetricTitle: 'Macro-F1 · six classes',
+      idsMetricNote: 'Historical notebook output on 566,149 test flows (stratified 80/20); rare-attack recall was 0.77 on 402 examples.',
+      idsContribution: 'Trained and evaluated the six-class Random Forest classifier, designed a five-level risk scheme, and presented results in a Flask dashboard.',
+      report: 'Full report ↗',
+      skillsEyebrow: 'WHAT I USE', stackTitle: 'CORE STACK<span class="accent">.</span><br>&amp; SKILLS<span class="accent">.</span>',
+      tabAll: 'All Stack', tabML: 'AI & ML', tabBuild: 'Systems & UI', tabEval: 'Evaluation & Data',
+      skillNote: 'Listed tools come from my CV and documented work. Team technologies do not imply sole authorship.',
+      journeyEyebrow: 'THE PATH SO FAR', journeyTitle: 'BUILT ON<br><span class="accent">PRACTICE.</span>',
+      journeyIntro: 'Education, focused learning, and practical experience.',
+      journey1Title: 'B.Sc. in Computer Engineering', journey1Desc: 'King Khalid University · Abha, Saudi Arabia',
+      journey2Title: 'AI Engineering Bootcamp · 200 hours', journey2Desc: 'Olo Academy · Sep–Nov 2026 · in partnership with MCIT; SAER team capstone',
+      journey3Title: 'Cooperative IT Training', journey3Desc: 'Aseer Municipality · Jun–Aug 2024 · monitored 3 internal servers; supported 25+ user devices',
+      certLabel: 'COMPLETION', cert: 'AWS Certified AI Practitioner Learning Path — Certificate of Completion (not an AWS certification)',
+      languageLabel: 'LANGUAGES', languages: 'Arabic (native) · English (professional working proficiency)',
+      contactLabel: "LET'S CONNECT", contactAside: 'FOR IDEAS, COLLABORATION, OR OPPORTUNITIES',
+      contactTitle: 'LET’S MAKE<br>IT <em>MATTER.</em>', copyEmail: 'Copy email',
+      footerNote: 'MADE WITH PURPOSE. BUILT ON EVIDENCE.', backTop: 'BACK TO TOP ↑', close: 'CLOSE',
+      contributionHeading: 'MY CONTRIBUTION', teamHeading: 'TEAM WORK & EVALUATION',
+      methodHeading: 'PROCESS', limitationsHeading: 'IMPORTANT CONTEXT',
+      sourceRepo: 'VIEW SOURCE CODE ↗', sourceEvidence: 'SEE EVALUATION EVIDENCE ↗',
+      copied: 'Email copied to clipboard'
+    },
+    ar: {
+      skip: 'تجاوز إلى المحتوى', navProjects: 'المشاريع', navSkills: 'التقنيات', navJourney: 'المسيرة', navContact: 'التواصل',
+      cmdBtn: 'انتقال سريع', cmdTitle: 'لوحة الأوامر السريعة', cmdSaer: 'الانتقال إلى 01 — سعّر (SAER)',
+      cmdIds: 'الانتقال إلى 02 — نظام كشف التسلل (IDS)', cmdSkills: 'الانتقال إلى الأدوات والمهارات', cmdLang: 'تبديل اللغة (عربي / EN)',
+      cmdTheme: 'تبديل الوضع الليلي / النهاري', cmdCopy: 'نسخ البريد الإلكتروني',
+      eyebrow: 'هندسة الحاسب · الذكاء الاصطناعي وتعلم الآلة', heroHello: 'مرحباً، أنا',
+      heroLead: 'أحوّل النماذج المعقدة إلى تجارب واضحة ومفيدة.',
+      heroDesc: 'خريج هندسة حاسب أعمل على تعلم الآلة والرؤية الحاسوبية وتقييم النماذج بدقة ووضوح.',
+      explore: 'استكشف مشاريعي',
+      location: 'أبها، السعودية · منفتح على الانتقال للعمل داخل المملكة',
+      heroFootLeft: 'أعمال مختارة / مشروعان', scrollDown: 'مرّر للاستكشاف',
+      proofLabel: 'عن مصداقية الأرقام', proofText: 'تكتسب النتائج قيمتها عندما نوضح ظروف قياسها.',
+      proofOne: 'نتيجة فريق سعّر للتعرف على المركبات · 59 فئة · اختبار داخلي مستخدم سابقاً',
+      proofTwo: 'مقياس Macro-F1 للتصنيف ذي الست فئات في دفتر تجربة تاريخي (566,149 تدفق)',
+      projectsEyebrow: 'أعمال مختارة', projectsTitle: 'أعمال حقيقية<span class="accent">.</span><br>بأدلة واضحة<span class="accent">.</span>',
+      projectsIntro: 'مشروعان، كود ونتائج موثقة، وتمييز واضح بين مساهمتي الشخصية وعمل الفريق.',
+      saerType: 'هندسة ذكاء اصطناعي · فريق من 3 · 2026', saerMini: 'من البيانات إلى التقدير',
+      zoomHint: 'اضغط للتكبير ↗', saerPipeTitle: 'فاحص معمارية الذكاء الاصطناعي',
+      pipeVision: 'الرؤية الحاسوبية', pipeSpecs: 'المواصفات', pipeUi: 'واجهة RTL',
+      saerCategory: 'تجربة استخدام / رؤية حاسوبية / انحدار',
+      saerSummary: 'منصة عربية تجريبية لاستكشاف السيارات، وتقدير أسعارها من المواصفات أو الصور، واقتراح الماركة والموديل.',
+      saerMetricTitle: 'دقة التعرف على السيارة Top-1',
+      saerMetricNote: 'نتيجة فريق العمل باستخدام DINOv2 وCLIP عبر 59 فئة على مجموعة اختبار داخلية مستخدمة سابقاً؛ ليست تحققاً خارجياً.',
+      myContribution: 'مساهمتي الشخصية',
+      saerContribution: 'بنيت واجهة عربية من اليمين إلى اليسار لاستكشاف السيارات وربطت تقديرات الأسعار من الصورة والمواصفات في تطبيق الفريق المبني بـ React وTypeScript وFastAPI.',
+      teamTech: 'الفريق', caseStudy: 'استكشف تفاصيل المشروع', liveDemo: 'جرّب سعّر ↗',
+      idsType: 'مشروع تخرج · فريق من 5 · 2025–2026', idsMini: 'من التدفق إلى النتيجة',
+      tThreat: 'مستوى التهديد', tConf: 'نسبة الثقة', tRisk: 'متوسط الخطر', tAlerts: 'التنبيهات',
+      idsGalleryPrompt: 'اختر لقطة حالة النظام للمعاينة (7 لقطات حقيقية)',
+      idsCategory: 'أمن الشبكات / تعلم الآلة / تقييم النماذج', idsSubtitle: 'نظام كشف التسلل',
+      idsSummary: 'مشروع تخرج لتصنيف تدفقات الشبكات من CICIDS2017 وتقدير شدة التهديد وعرض النتائج في لوحة Flask.',
+      idsMetricTitle: 'Macro-F1 · ست فئات',
+      idsMetricNote: 'مخرج تاريخي محفوظ لدفتر التدريب على 566,149 عينة اختبار (تقسيم طبقي 80/20)؛ استدعاء الهجمات النادرة 0.77 على 402 مثال.',
+      idsContribution: 'درّبت وقيّمت مصنّف Random Forest بست فئات، وصممت آلية لتصنيف الخطورة إلى خمسة مستويات، وعرضت النتائج عبر Flask.',
+      report: 'التقرير الكامل ↗',
+      skillsEyebrow: 'ما أستخدمه', stackTitle: 'الأدوات<span class="accent">.</span><br>والمهارات<span class="accent">.</span>',
+      tabAll: 'كل الأدوات', tabML: 'الذكاء الاصطناعي', tabBuild: 'التطوير والواجهات', tabEval: 'التقييم والبيانات',
+      skillNote: 'المهارات من سيرتي الذاتية وأعمال موثقة. تقنيات الفريق لا تعني أنني طورت كل أجزائها منفرداً.',
+      journeyEyebrow: 'مسيرتي', journeyTitle: 'معرفة تُبنى<br><span class="accent">بالتجربة.</span>',
+      journeyIntro: 'دراسة جامعية، تدريب متخصص، وتجربة عملية.',
+      journey1Title: 'بكالوريوس هندسة الحاسب', journey1Desc: 'جامعة الملك خالد · أبها، المملكة العربية السعودية',
+      journey2Title: 'معسكر هندسة الذكاء الاصطناعي · 200 ساعة', journey2Desc: 'أكاديمية علو · سبتمبر–نوفمبر 2026 · بالشراكة مع وزارة الاتصالات؛ سعّر مشروع تخرج جماعي',
+      journey3Title: 'تدريب تعاوني في تقنية المعلومات', journey3Desc: 'أمانة منطقة عسير · يونيو–أغسطس 2024 · متابعة 3 خوادم داخلية ودعم أكثر من 25 جهازاً',
+      certLabel: 'شهادة إكمال', cert: 'إكمال المسار التعليمي AWS Certified AI Practitioner، وليست شهادة اجتياز اختبار الاعتماد',
+      languageLabel: 'اللغات', languages: 'العربية (اللغة الأم) · الإنجليزية (مستوى مهني)',
+      contactLabel: 'لنتواصل', contactAside: 'للأفكار والتعاون والفرص المهنية',
+      contactTitle: 'لنصنع<br><em>أثراً.</em>', copyEmail: 'نسخ البريد',
+      footerNote: 'صُنِع بعناية، وبُني على أدلة.', backTop: 'العودة للأعلى ↑', close: 'إغلاق',
+      contributionHeading: 'مساهمتي الشخصية', teamHeading: 'عمل الفريق ونتائج التقييم',
+      methodHeading: 'مراحل العمل', limitationsHeading: 'السياق والحدود',
+      sourceRepo: 'عرض الكود المصدري ↗', sourceEvidence: 'مصادر التقييم ↗',
+      copied: 'تم نسخ البريد الإلكتروني'
+    }
+  };
+
+  const projectContent = {
+    saer: {
+      url: 'https://github.com/abdulrhman-sa/saer',
+      evidence: 'https://github.com/abdulrhman-sa/saer/blob/main/models/identity_current.json',
+      img: 'assets/projects/saer-showcase.jpg',
+      en: {
+        category: 'AI ENGINEERING / 2026', title: 'SAER / سعّر',
+        intro: 'A team-built Arabic-first research prototype for vehicle price estimation and visual vehicle identification.',
+        mine: 'I developed the Arabic RTL vehicle-exploration interface and connected the specification-based and image-based price estimates in the team application.',
+        team: 'The 3-person team integrated React/TypeScript and FastAPI with pricing and recognition models. Reported team evaluations: specifications MAE ≈ SAR 13,089 (academic evaluation), image MAE ≈ SAR 15,910 (1,670 images / 345 listings on a reused test set), and 94.58% top-1 DINOv2 + CLIP recognition across 59 classes.',
+        process: ['Collect vehicle specifications or images', 'Display Arabic RTL exploration and estimation experience', 'Run the appropriate model endpoint', 'Present estimates and make/model suggestions with context'],
+        limitations: 'These are historical academic/model results, not promised sale prices or fresh external tests. The recognition split was used earlier in development.'
+      },
+      ar: {
+        category: 'هندسة الذكاء الاصطناعي / 2026', title: 'سعّر / SAER',
+        intro: 'منصة عربية بحثية تجريبية طوّرها فريق لتقدير أسعار السيارات والتعرف عليها من الصور.',
+        mine: 'طورت واجهة استكشاف السيارات باللغة العربية واتجاه RTL، وربطت مسارات تقدير السعر من الصورة والمواصفات داخل تطبيق الفريق.',
+        team: 'دمج فريق من 3 أشخاص React وTypeScript وFastAPI مع نماذج التسعير والتعرف. نتائج الفريق: MAE ≈ 13,089 ريال لتسعير المواصفات، وMAE ≈ 15,910 ريال للصور (1,670 صورة على مجموعة اختبار مستخدمة سابقاً)، و94.58% Top-1 للتعرف عبر 59 فئة باستخدام DINOv2 + CLIP.',
+        process: ['إدخال مواصفات السيارة أو صورتها', 'استعراض التجربة العربية من اليمين لليسار', 'تمرير البيانات إلى مسار النموذج المناسب', 'عرض تقدير السعر أو اقتراح هوية السيارة مع سياق النتيجة'],
+        limitations: 'هذه نتائج بحثية تاريخية وليست أسعار بيع مضمونة أو اختبارات خارجية جديدة. مجموعة اختبار التعرف استُخدمت في التطوير سابقاً.'
+      }
+    },
+    ids: {
+      url: 'https://github.com/abdulrhman-sa/AI-Enhanced-Intrusion-Detection-System-with-Risk-Assessment',
+      evidence: 'https://github.com/abdulrhman-sa/AI-Enhanced-Intrusion-Detection-System-with-Risk-Assessment/blob/main/docs/model-card.md',
+      img: 'assets/projects/ids-dual.jpg',
+      en: {
+        category: 'COMPUTER ENGINEERING CAPSTONE / 2025–2026', title: 'Intrusion Detection',
+        intro: 'A five-person graduation project using network-flow classification and a risk assessment dashboard.',
+        mine: 'I trained and evaluated a six-class Random Forest on CICIDS2017, used macro-F1 and per-class recall in the evaluation, developed a five-level risk scoring scheme, and presented results through Flask.',
+        team: 'The project team combined machine-learning flow classification with Snort alerts and the dashboard. The historical notebook used 2,830,743 flows with 78 features, an 80/20 stratified split, and 566,149 test flows. It reported macro-F1 0.97, with rare-attack recall 0.77 on 402 test instances.',
+        process: ['Prepare CICIDS2017 flows and six target categories', 'Stratified train/test split and preprocessing', 'Train and evaluate Random Forest', 'Map predictions to risk levels and display findings through Flask'],
+        limitations: 'The reported six-class metrics are from a historical notebook. The saved runtime encoder has five classes and does not have an independent published re-evaluation.'
+      },
+      ar: {
+        category: 'مشروع التخرج في هندسة الحاسب / 2025–2026', title: 'نظام كشف التسلل',
+        intro: 'مشروع تخرج لفريق من خمسة أشخاص يجمع تصنيف تدفقات الشبكات مع لوحة تقييم المخاطر.',
+        mine: 'درّبت وقيّمت نموذج Random Forest بست فئات على CICIDS2017، واستخدمت macro-F1 والاستدعاء لكل فئة في التقييم، وصممت سياسة مخاطر من خمسة مستويات وعرضت النتائج عبر Flask.',
+        team: 'جمع الفريق بين تصنيف تدفقات الشبكة وتنبيهات Snort واللوحة. استخدم دفتر التدريب التاريخي 2,830,743 تدفقاً و78 سمة مع تقسيم طبقي 80/20 واختبار على 566,149 تدفقاً. سجل macro-F1 قدره 0.97، واستدعاء للهجمات النادرة 0.77 عبر 402 مثال اختبار.',
+        process: ['تجهيز تدفقات CICIDS2017 وتجميعها في ست فئات', 'تقسيم التدريب والاختبار وتجهيز السمات', 'تدريب وتقييم نموذج Random Forest', 'ربط التوقعات بمستويات خطورة وعرضها في Flask'],
+        limitations: 'المقاييس المنشورة تعود إلى دفتر تدريب تاريخي بست فئات. مرمّز حزمة التشغيل المحفوظة يتضمن خمس فئات ولا توجد لها إعادة تقييم مستقلة منشورة.'
+      }
+    }
+  };
+
+  const root = document.documentElement;
+  const $ = (id) => document.getElementById(id);
+  let lang = root.lang === 'ar' ? 'ar' : 'en';
+  let theme = root.dataset.theme === 'dark' ? 'dark' : 'light';
+  let selectedStack = 'all';
+  let selectedPipe = 'vision';
+  let selectedIdsIdx = 0;
+  let toastTimeout = 0;
+
+  const save = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+  const t = (k) => (dict[lang] && dict[lang][k]) || dict.en[k] || k;
+  const htmlKeys = new Set(['projectsTitle', 'stackTitle', 'journeyTitle', 'contactTitle']);
+
+  function flash(msg) {
+    const toast = $('toast');
+    clearTimeout(toastTimeout);
+    toast.textContent = msg;
+    toast.classList.add('show');
+    toastTimeout = setTimeout(() => toast.classList.remove('show'), 2300);
+  }
+
+  function renderStack() {
+    const grid = $('stack-grid');
+    grid.replaceChildren();
+    stackItems.forEach((item) => {
+      const card = document.createElement('div');
+      card.className = 'stack-card' + (selectedStack === 'all' || item.cat === selectedStack ? '' : ' hidden');
+
+      const wrap = document.createElement('div');
+      wrap.className = 'stack-icon-wrap';
+      const img = document.createElement('img');
+      img.src = item.icon;
+      img.alt = item.name + ' logo';
+      img.loading = 'lazy';
+      img.addEventListener('error', () => {
+        wrap.innerHTML = '<span class="stack-icon-fallback">' + item.name.slice(0, 2).toUpperCase() + '</span>';
+      });
+      wrap.appendChild(img);
+
+      const info = document.createElement('div');
+      info.className = 'stack-card-info';
+      const strong = document.createElement('strong');
+      strong.textContent = item.name;
+      const small = document.createElement('small');
+      small.textContent = lang === 'ar' ? item.subAr : item.subEn;
+      info.appendChild(strong);
+      info.appendChild(small);
+
+      card.appendChild(wrap);
+      card.appendChild(info);
+      grid.appendChild(card);
+    });
+    document.querySelectorAll('.stack-filter-btn').forEach((btn) => {
+      btn.classList.toggle('active', btn.dataset.stack === selectedStack);
+    });
+  }
+
+  function renderPipe() {
+    const d = pipeData[lang][selectedPipe];
+    $('saer-pipe-desc').textContent = d.desc;
+    const flow = $('saer-pipe-flow');
+    flow.replaceChildren();
+    d.nodes.forEach((n, idx) => {
+      const chip = document.createElement('span');
+      chip.className = 'pipe-node';
+      if (n.icon) {
+        const im = document.createElement('img');
+        im.src = n.icon;
+        im.alt = n.text;
+        im.className = 'tool-logo';
+        chip.appendChild(im);
+      }
+      const txt = document.createElement('span');
+      txt.textContent = n.text;
+      chip.appendChild(txt);
+      flow.appendChild(chip);
+      if (idx < d.nodes.length - 1) {
+        const arr = document.createElement('span');
+        arr.className = 'pipe-arrow';
+        arr.textContent = lang === 'ar' ? '←' : '→';
+        flow.appendChild(arr);
+      }
+    });
+    document.querySelectorAll('.pipe-tab').forEach((btn) => {
+      btn.classList.toggle('active', btn.dataset.pipe === selectedPipe);
+    });
+  }
+
+  function selectIdsState(idx) {
+    selectedIdsIdx = idx;
+    const st = idsStates[idx];
+    $('ids-main-img').src = st.src;
+    $('ids-main-img').alt = lang === 'ar' ? st.labelAr : st.labelEn;
+    $('ids-state-label').textContent = lang === 'ar' ? st.labelAr : st.labelEn;
+    const badge = $('ids-sev-badge');
+    badge.textContent = st.badge;
+    badge.className = 'telemetry-badge ' + st.sevClass;
+    $('ids-t-level').textContent = st.level;
+    $('ids-t-conf').textContent = st.conf;
+    $('ids-t-risk').textContent = st.risk;
+    $('ids-t-alerts').textContent = st.alerts;
+    $('ids-risk-fill').style.width = st.pct + '%';
+    $('ids-risk-fill').style.backgroundColor = st.barColor;
+    $('ids-counter').textContent = String(idx + 1).padStart(2, '0') + ' / ' + String(idsStates.length).padStart(2, '0');
+    document.querySelectorAll('.ids-thumb').forEach((btn, i) => {
+      btn.classList.toggle('active', i === idx);
+    });
+  }
+
+  function translate() {
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.dataset.i18n;
+      const val = t(key);
+      if (htmlKeys.has(key)) el.innerHTML = val;
+      else el.textContent = val;
+    });
+    root.lang = lang;
+    root.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    $('lang-toggle').textContent = lang === 'ar' ? 'EN' : 'عربي';
+    document.title = 'Abdulrhman Saeed AL-Asmri — ' + (lang === 'ar' ? 'مهندس ذكاء اصطناعي وتعلم آلة' : 'AI / ML Engineer');
+    renderStack();
+    renderPipe();
+    $('ai-lab-open').textContent = lang === 'ar' ? 'جرّب المختبر التفاعلي ↗' : 'TRY INTERACTIVE AI ↗';
+    $('ai-emblem').setAttribute('aria-label',lang === 'ar' ? 'افتح مختبر الذكاء الاصطناعي التفاعلي' : 'Open interactive AI Lab');
+    selectIdsState(selectedIdsIdx);
+    if (typeof renderAILab === 'function') renderAILab();
+  }
+
+  function openLightbox(src, caption) {
+    $('lightbox-img').src = src;
+    $('lightbox-img').alt = caption;
+    $('lightbox-caption').textContent = caption;
+    $('lightbox-dialog').showModal();
+  }
+
+  function openCase(which) {
+    const obj = projectContent[which];
+    if (!obj) return;
+    const d = obj[lang];
+    $('dialog-counter').textContent = 'CASE STUDY / ' + (which === 'saer' ? '01' : '02');
+    $('dialog-category').textContent = d.category;
+    $('dialog-title').textContent = d.title;
+    $('dialog-intro').textContent = d.intro;
+    $('dialog-mine').textContent = d.mine;
+    $('dialog-team').textContent = d.team;
+    $('dialog-limitations').textContent = d.limitations;
+    $('dialog-process').replaceChildren();
+    d.process.forEach((step) => {
+      const li = document.createElement('li');
+      li.textContent = step;
+      $('dialog-process').appendChild(li);
+    });
+    $('dialog-hero-image').src = obj.img;
+    $('dialog-hero-image').alt = d.title;
+    $('dialog-repo').href = obj.url;
+    $('dialog-doc').href = obj.evidence;
+    $('case-dialog').showModal();
+  }
+
+
+  // AI SPIN: synthetic threshold experiment, independent of the actual IDS model.
+  const aiLabCopy = {
+    en: {
+      top:'AI SPIN / INTERACTIVE LAB', close:'✕ CLOSE', kicker:'01 / EXPLORE THE DECISION',
+      title:'WHEN DOES AN ALERT FIRE<span class="accent">?</span>',
+      intro:'Move the alert threshold, then inspect how the sample network flows affect precision and recall.',
+      disclaimer:'EDUCATIONAL SIMULATION ONLY — Ten invented examples with illustrative scores. NOT the trained Random Forest, NOT live detection, and NOT the project’s five-level risk scheme.',
+      adjust:'01 — Set your alert threshold',threshold:'Alert when the demo score is at least',moreAlerts:'20% / MORE ALERTS',fewerAlerts:'90% / FEWER ALERTS',
+      flows:'02 — Inspect example flows',flowHint:'Select a flow for details',outcomes:'03 — See the trade-off',
+      alerts:'Alerts raised',precision:'Precision — flagged items that are attacks',recall:'Recall — attacks caught',missed:'Missed attacks',
+      reset:'↺ RESET EXPERIMENT',projectLink:'EXPLORE THE REAL IDS PROJECT ↗',
+      footer:'This binary threshold example does not reproduce the six-class research model or the historical test results.',
+      flagged:'FLAGGED',clear:'NOT FLAGGED',attack:'Attack',normal:'Benign',
+      truth:'Illustrative ground truth',score:'Example score',
+      yes:'The illustrative alert fired because this score meets the chosen threshold.',
+      no:'This flow was not flagged because its score falls below your threshold.',
+      falseAlarm:'False alarm: a benign sample was flagged.',miss:'Missed attack: an attack sample fell below the threshold.',
+      correct:'This sample is an attack and was flagged.',correctNormal:'This sample is benign and was not flagged.',
+      expl:'Lower thresholds can catch more attacks but raise more false alarms. Higher thresholds may reduce false alarms while missing more attacks.',
+      noAlert:'—',nameLabel:'Example flow',
+      flowsName:['Benign HTTP','Benign DNS','Port scan','Brute force','DoS burst','Web attack','Rare attack','Benign SSH','Port scan','Benign API']
+    },
+    ar: {
+      top:'AI SPIN / مختبر تفاعلي',close:'✕ إغلاق',kicker:'01 / جرّب قرار التنبيه',
+      title:'متى يُطلَق <span class="accent">التنبيه؟</span>',
+      intro:'غيّر عتبة التنبيه، ثم راقب كيف تتغير نتائج التدفقات الافتراضية ومقياسا الدقة والاستدعاء.',
+      disclaimer:'محاكاة تعليمية فقط — عشرة أمثلة ودرجات افتراضية للتوضيح. ليست نموذج Random Forest الحقيقي، ولا تكشف هجمات مباشرة، ولا تمثل مستويات المخاطر الخمسة للمشروع.',
+      adjust:'01 — اضبط عتبة التنبيه',threshold:'أطلق تنبيهاً إذا بلغت الدرجة الافتراضية',moreAlerts:'20% / تنبيهات أكثر',fewerAlerts:'90% / تنبيهات أقل',
+      flows:'02 — افحص التدفقات التجريبية',flowHint:'اضغط على أي تدفق لتفاصيله',outcomes:'03 — لاحظ الفرق',
+      alerts:'التنبيهات الصادرة',precision:'Precision — نسبة التنبيهات التي تمثل هجمات',recall:'Recall — نسبة الهجمات المكتشفة',missed:'الهجمات الفائتة',
+      reset:'↺ إعادة التجربة',projectLink:'استعرض مشروع كشف التسلل الحقيقي ↗',
+      footer:'هذا المثال الثنائي لا يعيد تشغيل نموذج التصنيف ذي الفئات الست ولا يعرض نتائجه البحثية التاريخية.',
+      flagged:'تنبيه',clear:'بدون تنبيه',attack:'هجوم',normal:'طبيعي',
+      truth:'التصنيف الحقيقي في المثال الافتراضي',score:'الدرجة التجريبية',
+      yes:'ظهر تنبيه لأن درجة المثال وصلت إلى العتبة التي اخترتها.',
+      no:'لم يظهر تنبيه لأن درجة المثال أقل من العتبة الحالية.',
+      falseAlarm:'إنذار كاذب: تدفق طبيعي ظهر عليه تنبيه.',miss:'هجوم فائت: تدفق هجومي لم يتجاوز العتبة.',
+      correct:'هذا تدفق هجومي افتراضي وتم رصده.',correctNormal:'هذا تدفق طبيعي افتراضي ولم يظهر له تنبيه.',
+      expl:'العتبة المنخفضة قد تلتقط هجمات أكثر ولكن تزيد الإنذارات الكاذبة. العتبة العالية قد تقلل الإنذارات الكاذبة لكنها قد تفوّت هجمات.',
+      noAlert:'—',nameLabel:'تدفق تجريبي',
+      flowsName:['HTTP طبيعي','DNS طبيعي','فحص منافذ','تخمين كلمات المرور','اندفاع DoS','هجوم ويب','هجوم نادر','SSH طبيعي','فحص منافذ','API طبيعي']
+    }
+  };
+  // Scores and labels below are invented pedagogical examples, not model outputs or performance data.
+  const aiDemoFlows = [
+    { score: 13, attack: false },{ score: 18, attack: false },
+    { score: 74, attack: true },{ score: 55, attack: true },
+    { score: 93, attack: true },{ score: 84, attack: true },
+    { score: 41, attack: true },{ score: 61, attack: false },
+    { score: 63, attack: true },{ score: 29, attack: false }
+  ];
+  let aiSelected = 6;
+  const labText = () => aiLabCopy[lang];
+  function renderAILab() {
+    const c = labText(), threshold = Number($('ai-lab-threshold').value);
+    document.querySelectorAll('[data-lab]').forEach(el => {
+      const key=el.dataset.lab;
+      if(key==='title') el.innerHTML=c.title;
+      else if(c[key] !== undefined) el.textContent=c[key];
+    });
+    $('ai-lab-dialog').setAttribute('aria-label',c.top);
+    $('ai-lab-value').textContent=threshold+'%';
+    $('ai-lab-threshold').setAttribute('aria-valuetext',threshold+'%');
+    const tp=aiDemoFlows.filter(f=>f.attack && f.score>=threshold).length;
+    const fp=aiDemoFlows.filter(f=>!f.attack && f.score>=threshold).length;
+    const fn=aiDemoFlows.filter(f=>f.attack && f.score<threshold).length;
+    $('ai-alerts').textContent=(tp+fp)+'/10';
+    $('ai-precision').textContent=tp+fp?Math.round(100*tp/(tp+fp))+'%':c.noAlert;
+    $('ai-recall').textContent=Math.round(100*tp/(tp+fn))+'%';
+    $('ai-missed').textContent=String(fn);
+    const grid=$('ai-flow-grid');grid.replaceChildren();
+    aiDemoFlows.forEach((f,i)=>{
+      const flagged=f.score>=threshold;
+      const b=document.createElement('button');b.type='button';
+      b.className='lab-flow'+(flagged?' flagged':'')+(i===aiSelected?' active':'');
+      b.setAttribute('aria-pressed',String(i===aiSelected));
+      b.setAttribute('aria-label',c.nameLabel+' '+(i+1)+': '+c.flowsName[i]+', '+f.score+'%, '+(flagged?c.flagged:c.clear));
+      const top=document.createElement('span');top.className='lab-flow-main';
+      const name=document.createElement('span');name.className='lab-flow-name';name.textContent=c.flowsName[i];
+      const id=document.createElement('span');id.className='lab-flow-id';id.textContent=String(i+1).padStart(2,'0')+' / '+f.score+'%';
+      top.append(name,id);
+      const track=document.createElement('span');track.className='lab-score-track';track.setAttribute('aria-hidden','true');
+      const fill=document.createElement('span');fill.className='lab-score-fill';fill.style.width=f.score+'%';track.append(fill);
+      b.append(top,track);
+      b.addEventListener('click',()=>{aiSelected=i;renderAILab();grid.children[i].focus();});
+      grid.append(b);
+    });
+    const selected=aiDemoFlows[aiSelected],flag=selected.score>=threshold;
+    $('ai-selected-title').textContent=c.flowsName[aiSelected]+' · '+selected.score+'%';
+    $('ai-selected-status').textContent=flag?c.flagged:c.clear;
+    $('ai-selected-status').className='lab-status'+(flag?' flagged':'');
+    let insight=selected.attack?(flag?c.correct:c.miss):(flag?c.falseAlarm:c.correctNormal);
+    $('ai-selected-description').textContent=insight;
+    $('ai-selected-truth').textContent=c.truth+': '+(selected.attack?c.attack:c.normal)+' · '+c.score+': '+selected.score+'%. '+(flag?c.yes:c.no);
+    $('ai-lab-explanation').textContent=c.expl;
+  }
+  function openAILab(){
+    const dlg=$('ai-lab-dialog');
+    renderAILab();
+    if(!dlg.open)dlg.showModal();
+    $('ai-lab-threshold').focus();
+  }
+  $('ai-lab-threshold').addEventListener('input',renderAILab);
+  $('ai-lab-reset').addEventListener('click',()=>{aiSelected=6;$('ai-lab-threshold').value='50';renderAILab();$('ai-lab-threshold').focus();});
+  $('close-ai-lab').addEventListener('click',()=>$('ai-lab-dialog').close());
+  $('ai-lab-dialog').addEventListener('click',e=>{if(e.target===$('ai-lab-dialog'))$('ai-lab-dialog').close()});
+  $('ai-lab-open').addEventListener('click',openAILab);
+
+  function toggleTheme() {
+    theme = theme === 'light' ? 'dark' : 'light';
+    root.dataset.theme = theme;
+    save('asa-v2-theme', theme);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = theme === 'dark' ? '#0d1117' : '#f5f5f2';
+  }
+
+  function toggleLang() {
+    lang = lang === 'en' ? 'ar' : 'en';
+    save('asa-v2-lang', lang);
+    translate();
+  }
+
+  async function copyEmail() {
+    const email = 'abdulrhmansa2003@gmail.com';
+    try {
+      await navigator.clipboard.writeText(email);
+      flash(t('copied'));
+    } catch (e) {
+      const inp = document.createElement('input');
+      inp.value = email;
+      document.body.appendChild(inp);
+      inp.select();
+      document.execCommand('copy');
+      inp.remove();
+      flash(t('copied'));
+    }
+  }
+
+  $('ai-emblem').addEventListener('click', openAILab);
+
+  $('lang-toggle').addEventListener('click', toggleLang);
+  $('theme-toggle').addEventListener('click', toggleTheme);
+  $('copy-email').addEventListener('click', copyEmail);
+
+  $('menu-toggle').addEventListener('click', () => {
+    const nav = $('mobile-menu');
+    const open = nav.hidden;
+    nav.hidden = !open;
+    $('menu-toggle').setAttribute('aria-expanded', String(open));
+  });
+  document.querySelectorAll('#mobile-menu a').forEach((a) => {
+    a.addEventListener('click', () => {
+      $('mobile-menu').hidden = true;
+      $('menu-toggle').setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.querySelectorAll('.stack-filter-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      selectedStack = btn.dataset.stack;
+      renderStack();
+    });
+  });
+
+  document.querySelectorAll('.pipe-tab').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      selectedPipe = btn.dataset.pipe;
+      renderPipe();
+    });
+  });
+
+  document.querySelectorAll('.ids-thumb').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      selectIdsState(Number(btn.dataset.idsIdx));
+    });
+  });
+
+  $('saer-zoom-trigger').addEventListener('click', () => {
+    openLightbox($('saer-main-img').src, 'SAER / سعّر — Vehicle Intelligence Platform');
+  });
+  $('ids-zoom-trigger').addEventListener('click', () => {
+    const st = idsStates[selectedIdsIdx];
+    openLightbox(st.src, lang === 'ar' ? st.labelAr : st.labelEn);
+  });
+
+  document.querySelectorAll('[data-case]').forEach((b) => {
+    b.addEventListener('click', () => openCase(b.dataset.case));
+  });
+  $('close-dialog').addEventListener('click', () => $('case-dialog').close());
+  $('close-lightbox').addEventListener('click', () => $('lightbox-dialog').close());
+  $('cmd-open').addEventListener('click', () => $('cmd-dialog').showModal());
+  $('close-cmd').addEventListener('click', () => $('cmd-dialog').close());
+
+  [$('case-dialog'), $('lightbox-dialog'), $('cmd-dialog')].forEach((dlg) => {
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  });
+
+  document.querySelectorAll('.cmd-item').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const c = btn.dataset.cmd;
+      $('cmd-dialog').close();
+      if (c === 'saer') location.hash = '#saer';
+      if (c === 'ids') location.hash = '#ids';
+      if (c === 'skills') location.hash = '#skills';
+      if (c === 'lang') toggleLang();
+      if (c === 'theme') toggleTheme();
+      if (c === 'email') copyEmail();
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if ($('cmd-dialog').open) $('cmd-dialog').close();
+      else $('cmd-dialog').showModal();
+    }
+  });
+
+  $('year').textContent = String(new Date().getFullYear());
+  let scrollPending = false;
+  const updateScroll = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    $('scroll-progress').style.width = (max > 0 ? Math.min(100, Math.max(0, (scrollY / max) * 100)) : 0) + '%';
+    scrollPending = false;
+  };
+  addEventListener('scroll', () => {
+    if (!scrollPending) { scrollPending = true; requestAnimationFrame(updateScroll); }
+  }, { passive: true });
+  addEventListener('resize', updateScroll);
+
+  translate();
+  updateScroll();
+})();
+</script>
 </body>
 </html>

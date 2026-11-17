@@ -1,66 +1,72 @@
-# Abdulrhman Saeed AL-Asmri — Personal Portfolio
+# Abdulrhman Saeed AL-Asmri — Portfolio v2
 
-A custom, bilingual (Arabic/English) static portfolio hosted on GitHub Pages.
+Website: https://abdulrhman-sa.github.io/
 
-**Website:** https://abdulrhman-sa.github.io  
-**Repository:** https://github.com/abdulrhman-sa/abdulrhman-sa.github.io
+A lightweight Arabic-first / English personal portfolio built around exactly two documented projects. No photo is needed.
 
-## Project status
+## What is included
 
-This is a working design and code foundation. **No resume, project achievements, skills, employer claims, social links beyond GitHub, or personal photographs were invented.** The project area shows an explicit empty state until verified material is supplied. No photo is required.
+- Full responsive editorial design (off-white, graphite and signal orange) with a dark mode
+- Arabic / English, RTL/LTR, persistent language and theme preferences
+- SAER and AI-Enhanced Intrusion Detection with sourced results and contribution/team separation
+- Project image galleries and accessible detail dialogs
+- Skills tabs that connect tools to actual work
+- Education, 200-hour AI bootcamp, cooperative training, contact actions
+- Downloadable PDF converted from the supplied original CV (content unchanged)
+- Search metadata, favicon, Open Graph PNG, sitemap, 404, reduced-motion support
 
-## Files
+## Important evidence caveats
 
-- `index.html` — semantic page structure, SEO and accessible controls
-- `css/style.css` — responsive theme, typography, animation and print styling
-- `js/main.js` — language switch, theme, menu, share, copy, project rendering, motion
-- `data/ar.json`, `data/en.json` — editable bilingual interface text
-- `data/projects.json` — project records (initially an empty array)
-- `assets/` — original favicon and social-preview artwork
-- `site.webmanifest`, `robots.txt`, `sitemap.xml`, `404.html` — supporting files
+- SAER 94.58% top-1 = *team* DINOv2 + CLIP recognition, 59 vehicle classes, historical reused internal test split. Not independent validation. Team price MAE values are research estimates, not sale-price guarantees.
+- IDS macro-F1 = 0.97 on a historical six-class 80/20 stratified CICIDS2017 notebook evaluation (566,149 test flows). The published five-class runtime artifacts do not have an independent evaluation in the source repository.
+- The portfolio uses only two featured projects. Training repositories are not shown as portfolio projects.
+- No inferred GPA, employer logos, awards, endorsements, or false project claims are included.
 
-## Update text
+## Media and live links
 
-Edit the matching key in both `data/ar.json` and `data/en.json`. The browser loads these JSON files dynamically. Only trusted fixed inline heading markup is allowed in a few predefined heading keys.
+Actual project screenshots are sourced from the owner's public GitHub repositories and loaded by the website via `raw.githubusercontent.com`. The design has graceful branded fallbacks when offline or when a screenshot is unavailable. For long-term reliability and fewer third-party requests, download the project screenshots into `assets/` and change their URLs to local paths after reviewing original asset permissions.
 
-## Add a real project
+SAER:
+- Repository: https://github.com/abdulrhman-sa/saer
+- Live demo (external, may cold-start / be temporarily unavailable): https://saer-rmsavg637.pages.dev/
+- Images: `docs/assets/home-screen.jpg`, `listings-screen.jpg`, `market-screen.jpg`
+- Metrics: `models/identity_current.json` and README
 
-Replace the empty array in `data/projects.json` with records using *verified* facts. Example STRUCTURE ONLY (do not publish the example as a real project):
+Intrusion Detection:
+- Repository: https://github.com/abdulrhman-sa/AI-Enhanced-Intrusion-Detection-System-with-Risk-Assessment
+- Images: `docs/assets/dashboard.png`, `confusion-matrix.png`, `presentation-demo.png`
+- Evaluation: `docs/model-card.md`, original training notebook, README
+- Academic report: `docs/reports/graduation-report.pdf`
 
-```json
-[
-  {
-    "title": { "ar": "عنوان المشروع الحقيقي", "en": "Verified project title" },
-    "description": { "ar": "شرح موثق", "en": "Verified short description" },
-    "url": "https://github.com/OWNER/REAL_REPO"
-  }
-]
-```
+## How to publish on GitHub Pages
 
-Do not publish example information as if it were an actual achievement. `url` is optional and links must use `https://` or `http://`. HTML is not accepted inside project data. A project image component can be added after the real media is supplied.
+1. Use repository `abdulrhman-sa/abdulrhman-sa.github.io`.
+2. Upload **all files and folders inside this ZIP**, not the ZIP itself.
+3. Confirm `index.html`, `styles.css`, `app.js`, `assets/`, and `resume/` are all in repository root.
+4. In Settings → Pages set Source to **Deploy from a branch**, branch `main`, folder `/(root)`.
+5. Open https://abdulrhman-sa.github.io/ after the build finishes.
 
-## Update colors
+## How to edit
 
-Edit the custom properties in `:root` (dark theme) and `:root[data-theme="light"]` in `css/style.css`. Keep foreground/background contrast readable.
+- Content and translations: `app.js` → `dict.en`, `dict.ar`, and `projectContent`.
+- Styles: `styles.css` → `:root` and `:root[data-theme=dark]` color variables.
+- Main structure: `index.html`.
+- Projects gallery: `app.js` → `projectContent.saer.gallery` and `projectContent.ids.gallery`.
+- Update CV: replace `resume/Abdulrhman_Saeed_AL-Asmri_CV.pdf` keeping the same filename, or update link references in `index.html`.
+- Contact info: change `mailto:` and `app.js` copy-email handler; update SEO metadata if relevant.
 
-## Add a photo or CV later
+No paid APIs, frameworks, tracking scripts, analytics, cookies or backend are required. Two settings are stored in localStorage.
 
-No photograph or CV link is present. After the owner supplies approved material, optimize its file size, place it under `assets/` (photo) or `resume/` (PDF), then update the relevant HTML. Do not add a fake headshot or blank download button.
+## Verified / not verified
 
-## Local testing
+- Automated Chromium tests were run against an inline, offline rendering of the site's HTML/CSS/JS to test desktop/mobile, RTL/LTR, theme switching, galleries, keyboard dialog closing, skills navigation, menu, overflow, and runtime exceptions.
+- Project screenshots will load from the live GitHub URLs when the browser has network access; their online loading was not independently verified from this test environment.
+- Lighthouse 90+ and actual GitHub Pages publication have **not** been verified. The available GitHub connector can read the repository, but its write API returned 403; manual upload is needed unless permissions are changed.
 
-Run a static web server from the repository root, because browser `fetch()` does not load the JSON files reliably via `file://`:
+## AI Spin interactive lab (v4)
 
-```sh
-python3 -m http.server 8000
-```
+The interactive orbit icon next to the main name, or the **TRY INTERACTIVE AI** link, opens an educational threshold explorer. It includes ten **synthetic** binary-labeled examples with invented scores, a threshold slider, clickable sample flows, dynamically calculated precision/recall/alert count/missed attacks, reset, Arabic/English support, keyboard navigation and responsive layout.
 
-Open http://localhost:8000. Check both languages, themes, touch size, keyboard menu focus, reduced-motion mode, link copying and the network console.
+**Important:** This lab does not load a real ML model, and does not reproduce either the six-class Random Forest's evaluations or the five-level risk mapping. These ten scores are made-up instructional values only. Do not quote the interactive lab's precision/recall as research outcomes.
 
-## Deployment
-
-GitHub Pages: Settings → Pages → Deploy from a branch → `main` → `/(root)`. A successful deployment should serve the `index.html` file at https://abdulrhman-sa.github.io/.
-
-## Privacy and accessibility
-
-No trackers, cookies, analytics, server forms or embedded personal data. Preference values (`asa-lang`, `asa-theme`) are stored locally. Keyboard-accessible controls, an accessible menu with focus trapping, explicit focus indicators and reduced motion support are implemented. Fonts are requested from Google Fonts, which is a third-party request; host fonts locally if stricter privacy is desired.
+On the default threshold of 50%, the demonstration generates 6 alerts (five true positives and one false positive) and catches five of six attack samples. At 70%, the experiment generates three alerts and catches three of six attack samples. This illustrates the tradeoff rather than predicting actual network behavior.
